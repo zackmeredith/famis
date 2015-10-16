@@ -1,0 +1,122 @@
+
+////////////////////////////////////////////
+// Social List
+///////////////////////////////////////
+.social-list {
+
+
+
+  &-item {
+
+    &:not(:first-child) {
+      padding-left: 1rem;
+    }
+
+
+    &-link {
+
+    }
+
+  }
+
+}
+
+////////////////////////////////////////////
+// Degree Programs
+///////////////////////////////////////
+
+.degree-grid {
+
+  &-item {
+    height: 300px;
+    height: 20rem;
+
+
+
+
+  }
+
+}
+
+////////////////////////////////////////////
+// Tile grid
+///////////////////////////////////////
+
+.four-tile-grid {
+
+  &-item {
+    height: 400px;
+    height: 50vh;
+  }
+}
+
+////////////////////////////////////////
+// Link Hover
+//////////////////////////////////////
+.hover-bar {
+  &:after{
+     transition-duration: 0.5s;
+     position: absolute;
+     width: 100%;
+     height: 3px;
+     background-color: black;
+     content: "";
+     left: 0;
+     bottom: -0.25rem;
+     transition: all 0.35s ease-in-out;
+     transform: scale(0);
+    }
+
+    &:hover {
+      &:after{
+         transform: scale(1);
+        }
+    }
+
+    &-nav-main {
+      transition: all 0.25s ease-in-out;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+}
+
+////////////////////////////////////////
+// Search
+//////////////////////////////////////
+
+// .search-field {
+//   padding: 0.2rem 0.5rem;
+//   border-radius: 15px 15px;
+//   border: 1px solid #ccc;
+//   width: 12rem;
+//
+// }
+//
+// -input {
+//
+//   &:focus {
+//
+//     .nav-list-search {
+//       border-color: red !important;
+//       color: blue;
+//     }
+//
+//   }
+//
+//
+// }
+
+
+////////////////////////////////////////
+// News Posts
+//////////////////////////////////////
+.news-post {
+  width: 100%;
+
+  @media (min-width: 40em) {
+
+    width: 700px;
+
+  }
+}

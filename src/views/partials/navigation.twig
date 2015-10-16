@@ -1,0 +1,73 @@
+{# View :: Partial :: Navigation #}
+
+<header class="header">
+
+  {% block header %}
+    <div class="nav-bar flex flex-center flex-justify">
+
+      <div class="logo hover-bar relative" role="banner">
+        <a class="logo-link" href="/" rel="home">
+          <h2 class="logo-text-main m0">LOYOLA</h2>
+          <span class="logo-text-sub block">FAMIS</span>
+        </a>
+      </div>
+
+
+
+      <div class="nav-main-wrapper flex">
+
+
+
+
+      <nav id="nav-main" class="nav-main" role="navigation">
+        <ul class="nav-list mb0">
+
+          {% for item in primary_menu.get_items %}
+            <li class="nav-list-item list-reset  {{item.classes | join(' ')}}">
+              <div class="hover-bar-nav-main">
+
+
+              <a class="nav-list-item-link p2" href="{{item.get_link}}">{{item.title}}</a>
+
+              </div>
+
+              {% if item.get_children %}
+                <ul class="nav-list nav-drop flex flex-center">
+
+                  {% for child in item.get_children %}
+                    <li class="nav-drop-item nav-list-item list-reset m2 hover-bar-nav-main">
+
+                      <a class="nav-link" href="{{child.get_link}}">{{child.title}}</a>
+                    </li>
+                  {% endfor %}
+
+                </ul>
+              {% endif %}
+
+            </li>
+          {% endfor %}
+
+
+
+        </ul>
+      </nav>
+
+      <div class="wp_search">
+        <form role="search" method="get" id="searchform" class="searchform" action="/">
+          <label class="srt" for="s">Search</label>
+          <div class="wp_search__field search-field">
+            <input type="search search-field-input" class="wp_search__input" name="s" placeholder="Search">
+          </div>
+        </form>
+      </div>
+
+
+      </div>
+
+      <div class="menu btn-back ">
+        <div class="btn-back-icon"></div>
+      </div>
+    </div>
+  {% endblock %}
+
+</header>

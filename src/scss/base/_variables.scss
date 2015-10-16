@@ -1,0 +1,33 @@
+// A standard margin
+$spacer: 32px;
+
+// Color
+// $accent-color: #42CAFD;
+// $accent-color: #16BAC5;
+// $accent-color: #49C6E5;
+$accent-color: #44FFD1;
+$button-color: $accent-color;
+$button-color-primary: #F72C25;
+// $nav-bg: #2A2D34;
+$nav-bg: #000;
+$nav-text-color: white;
+// $news-bg: #2922C0;
+// $news-bg: #FAF0CA;
+$news-bg: rgba(#f5f5f5, 0.7);
+// $news-bg: #FCFCFC;
+$news-text-color: #222;
+// $connect-bg: rgb(146, 189, 203);
+$initiatives-intro-color: #FEFEFE;
+$connect-bg: white;
+$contact-bg: #fff;
+$footer-bg: $nav-bg;
+
+$black:       #1a1a1a;
+// $blue:        #3498db;
+$blue:        $accent-color;
+$gray:        #cbd0d3;
+
+//Typography
+$heading-font: "Fjalla One", sans-serif;
+$pg-font: "PT Sans", sans-serif;
+$page-heading-color: white;
