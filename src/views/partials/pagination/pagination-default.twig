@@ -1,0 +1,29 @@
+{# View :: Partial :: Pagination - Default #}
+
+<nav class="center">
+  <ul class="pagination">
+    {% if pagination.prev %}
+      <li class="inline-block">
+        <a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">
+          <span aria-hidden="true">&laquo;</span><span class="srt">Previous</span>
+        </a>
+      </li>
+    {% endif %}
+    {% for page in pagination.pages %}
+      <li class="{{page.class}} inline-block">
+        {% if page.link %}
+          <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+          {% else %}
+          <span class="{{page.class}}">{{page.title}}</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+    {% if pagination.next %}
+      <li class="inline-block">
+        <a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">
+          <span aria-hidden="true">&raquo;</span><span class="srt">Next</span>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>

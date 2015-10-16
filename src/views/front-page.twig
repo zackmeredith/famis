@@ -1,0 +1,26 @@
+{# View :: Home #}
+
+{% extends "base.twig" %}
+
+{% block header %}
+
+<header class="header">
+
+      {% include ['partials/hero.twig'] %}
+
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+{% endblock %}
+
+{% block footer %}
+  <footer class="footer px3 py2 clearfix" id="footer">
+    {% include 'footer.twig' %}
+  </footer>
+  {{ function('wp_footer') }}
+{% endblock %}

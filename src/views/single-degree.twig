@@ -1,0 +1,75 @@
+{# View :: Single - Degree #}
+
+{# View :: Page #}
+
+{% extends "base.twig" %}
+
+{% block header %}
+
+<header class="page-header">
+  <div class="flex flex-center flex-justify px3">
+
+  <h1 class="page-header-title m0 py4" itemprop="headline">
+    {{page.title}}
+  </h1>
+  <button class="btn btn-outline" type="button" name="button">View Degree Guide</button>
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+  <article class="post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+
+    {# Content #}
+
+    <div class="clearfix container py4 mb4">
+      <div class="sm-col sm-col-6 px2">
+        <h1 class="h1">Find the program for you</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      <div class="sm-col sm-col-6 px2 center">
+        <iframe class="block mx-auto" width="560" height="315" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+<div class="white clearfix four-tile-grid">
+    <div class="four-tile-grid-item bg-cover bg-center p2 center relative sm-col sm-col-6" style="background: url('http://unsplash.it/850/800')">
+      <div class="overlay">
+      </div>
+
+    </div>
+    <div class="four-tile-grid-item p2 center sm-col sm-col-6">
+      <div class="black py2">
+      <h2>BS Music Industry Studies</h2>
+      <button class="btn btn-outline" type="button" name="button">View Degree</button>
+      </div>
+    </div>
+</div>
+<div class="four-tile-grid white clearfix">
+  <div class="four-tile-grid-item p2 center sm-col sm-col-6">
+    <div class="black py2">
+    <h2>BS Music Industry Studies</h2>
+    <p class="px4 py2">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <button class="btn btn-outline" type="button" name="button">View Degree</button>
+    </div>
+  </div>
+    <div class="four-tile-grid-item bg-cover bg-center p2 center relative sm-col sm-col-6" style="background: url('http://unsplash.it/860/800')">
+      <div class="overlay">
+      </div>
+
+    </div>
+</div>
+
+<div class="container center p4">
+  <h2 class="h2 mb4">Apply to the program to start your future</h2>
+  <button class="btn btn-outline caps" type="button" name="button">Apply now</button>
+</div>
+
+  </article>
+
+{% endblock %}

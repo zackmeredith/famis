@@ -1,0 +1,35 @@
+{# View :: News #}
+
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="clearfix">
+
+  <article class="sm-col sm-col-6 p3 post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+
+    {# Content #}
+    <!-- <header>
+      <h1 itemprop="headline">
+        {{page.title}}
+      </h1>
+    </header> -->
+
+    {# Content #}
+    {% for post in posts %}
+      <div class="news-post">
+        {% include ['partials/snippet.twig'] %}
+      </div>
+
+    {% endfor %}
+
+
+
+  </article>
+
+  <div class="sm-col-right sm-col-4 p2" style="background-color: #f5f5f5;">
+    <h3>Featured</h3>
+  </div>
+</div>
+
+{% include ['partials/pagination.twig'] %}
+{% endblock %}
