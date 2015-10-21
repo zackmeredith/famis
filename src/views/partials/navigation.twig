@@ -1,71 +1,83 @@
 {# View :: Partial :: Navigation #}
 
-  {% block nav %}
-    <div class="nav-bar flex flex-center flex-justify">
-
-      <div class="logo hover-bar relative ml3" role="banner">
-        <a class="logo-link" href="/" rel="home">
-          <h2 class="logo-text-main m0">LOYOLA</h2>
-          <span class="logo-text-sub block">FAMIS</span>
-        </a>
-      </div>
+<!-- <div class="relative nav-header"> -->
 
 
+{% block header %}
+<div class="nav-bar flex flex-center flex-justify px1 sm-px3">
 
-      <!-- <div class="nav-main-wrapper flex"> -->
-
-
-
-
-      <nav id="nav-main" class="nav-main nav-main-wrapper flex px3" role="navigation">
-        <ul class="nav-list mb0 list-reset">
-
-          {% for item in primary_menu.get_items %}
-            <li class="nav-list-item list-reset {{item.classes | join(' ')}}">
-              <div class="hover-bar-nav-main">
-
-
-              <a class="nav-list-item-link p2" href="{{item.get_link}}">{{item.title}}</a>
-
-              </div>
-
-              {% if item.get_children %}
-                <ul class="nav-drop list-reset">
-
-                  {% for child in item.get_children %}
-                    <li class="nav-drop-item nav-list-item list-reset m2 hover-bar-nav-main">
-
-                      <a class="nav-link" href="{{child.get_link}}">{{child.title}}</a>
-                    </li>
-
-                    
-                  {% endfor %}
-
-                </ul>
-              {% endif %}
-
-            </li>
-          {% endfor %}
-
-
-
-        </ul>
-
-        <div class="wp_search">
-          <form role="search" method="get" id="searchform" class="searchform" action="/">
-            <label class="srt" for="s">Search</label>
-            <div class="wp_search__field search-field">
-              <input type="search search-field-input" class="wp_search__input" name="s" placeholder="Search">
-            </div>
-          </form>
-        </div>
-      </nav>
-
-
-      <!-- </div> -->
-
-      <div class="menu btn-back ">
-        <div class="btn-back-icon"></div>
-      </div>
+    <div class="logo hover-bar relative" role="banner">
+      <a class="logo-link" href="/" rel="home">
+        <h2 class="logo-text-main m0">LOYOLA</h2>
+        <span class="logo-text-sub block">FAMIS</span>
+      </a>
     </div>
-  {% endblock %}
+
+
+
+    <div class="nav-main-wrapper flex flex-center">
+    <nav id="nav-main" class="nav-main" role="navigation">
+      <ul class="nav-list list-reset mb0">
+
+        {% for item in primary_menu.get_items %}
+          <li class="nav-list-item list-reset inline-block {{item.classes | join(' ')}}">
+
+
+
+            <a class="nav-list-item-link p1" href="{{item.get_link}}">{{item.title}}</a>
+
+
+
+            {% if item.get_children %}
+            <span class="p1 nav-drop-button">
+              <svg id="triangleDown" class="nav-drop-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="currentcolor">
+                <path d="M4 8 H28 L16 26 z"></path>
+              </svg>
+            </span>
+
+
+              <ul class="nav-list nav-drop list-reset">
+
+                {% for child in item.get_children %}
+                  <li class="nav-drop-item nav-list-item list-reset hover-bar-nav-main inline-block">
+
+                    <a class="nav-drop-link" href="{{child.get_link}}">{{child.title}}</a>
+
+
+                  </li>
+                {% endfor %}
+
+              </ul>
+
+
+            {% endif %}
+
+
+
+
+          </li>
+        {% endfor %}
+
+
+      </ul>
+
+
+
+    </nav>
+    <div class="wp_search nav-main-search">
+      <form role="search" method="get" id="searchform" class="searchform" action="/">
+        <label class="srt" for="s">Search</label>
+        <div class="wp_search__field search-field">
+          <input type="search search-field-input" class="wp_search__input" name="s" placeholder="Search">
+        </div>
+      </form>
+    </div>
+
+    </div>
+
+    <div class="menu btn-back mr2">
+      <div class="btn-back-icon"></div>
+    </div>
+  </div>
+{% endblock %}
+<!-- </div> -->

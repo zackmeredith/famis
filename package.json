@@ -42,6 +42,7 @@
     "require-dir": "^0.3.0"
   },
   "dependencies": {
-    "basscss-responsive-white-space": "^0.1.0"
+    "basscss-responsive-white-space": "^0.1.0",
+    "geomicons-open": "^2.0.0"
   }
 }

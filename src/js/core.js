@@ -9,6 +9,12 @@ $('.menu').click(function(){
   $('.nav-main-wrapper').toggleClass('slide-in-right');
 });
 
+
+$('.nav-drop-button').on('click', function(){
+  $(this).toggleClass('nav-drop-button-flip');
+  $(this).next().toggleClass('nav-drop-open');
+});
+
 ///////////////////////////////////////
 // Sliders
 /////////////////////////////////////

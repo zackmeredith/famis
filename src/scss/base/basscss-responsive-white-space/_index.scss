@@ -1,0 +1,26 @@
+/* Basscss Responsive White Space */
+
+// @import "./lib/sm-margins";
+// // @import "./lib/md-margins";
+// // @import "./lib/lg-margins";
+//
+// @import "./lib/sm-padding";
+// // @import "./lib/md-padding";
+// // @import "./lib/lg-padding";
+
+$breakpoint-sm: 40em;
+$breakpoint-md: 52em;
+$breakpoint-lg: 64em;
+
+$space-1: .5rem;
+$space-2: 1rem;
+$space-3: 2rem;
+$space-4: 4rem;
+
+@import "./lib/sm-margins";
+// @import "./lib/md-margins";
+// @import "./lib/lg-margins";
+
+@import "./lib/sm-padding";
+// @import "./lib/md-padding";
+// @import "./lib/lg-padding";

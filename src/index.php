@@ -11,8 +11,6 @@ if (!class_exists('Timber')){
 $data = Timber::get_context();
 $data['pagination'] = Timber::get_pagination();
 $data['posts'] = Timber::get_posts();
-$page = new TimberPost();
-$context['page'] = $page;
 
 $templates = array('index.twig');
 
