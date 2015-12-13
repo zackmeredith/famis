@@ -1,0 +1,49 @@
+{# View :: Page - Apply #}
+
+{% extends "base.twig" %}
+
+{% block header_no_img %}
+<header class="page-header-no-img bg-alternate py2">
+  <div class="center">
+    <h1 class="page-header-title m0 py4 center" itemprop="headline">
+      {{page.title}}
+    </h1>
+    <img class="mx-auto block mb3" src="{{bloginfo('stylesheet_directory')~'/img/apply.svg'}}" alt="" />
+
+    <p class="center mb3 hero-content-sub px2 sm-px4 mx-auto">
+      Applicants to Loyola New Orleans' Department of Film & Music Industry Studies program not only learn ways to improve their craft, but also gain the tools to turn their craft into a career.
+    </p>
+    <!-- <hr class="mt2 mb2"> -->
+    <div class="center py2 mb2">
+      <a class="sm-p2 black" href="/admissions/freshman">
+        <button class="btn btn-outline btn-accent btn-outline-round" name="button" type="button">Incoming Freshman</button>
+      </a>
+      <a class="sm-p2 black" href="/admissions/transfer-students">
+        <button class="btn btn-outline btn-accent btn-outline-round" name="button" type="button">Transfer Students</button>
+      </a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+
+<article class="post-type-{{page.post_type}} p1 sm-p3 mb2" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+
+  {# Content #}
+  <div class="container">
+
+    <p>
+      {{page.content}}
+    </p>
+  </div>
+
+</article>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer px3 py2 clearfix relative bottom-0" id="footer">
+  {% include 'footer.twig' %}
+</footer>
+{{ function('wp_footer') }}
+{% endblock %}

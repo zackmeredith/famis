@@ -1,0 +1,47 @@
+<tr>
+  <td><a href="#" class="secondary-text-link" data-reveal-id="myModal{{post.ID}}">
+    {{post.title}}
+  </a>
+  <div id="myModal{{post.ID}}" class="reveal-modal" data-reveal>
+    <!-- <div class="modal-content"> -->
+
+      <div class="clearfix bg-alternate">
+        {% if post.get_field('wpcf-video-embed-code') %}
+          <div class="sm-col sm-col-8">
+
+            <div class="flex-video widescreen">
+              {{post.get_field('wpcf-video-embed-code')}}
+            </div>
+
+
+          </div>
+          <div class="sm-col sm-col-4 p2 reveal-modal-txt-content bg-white" style="overflow-y: scroll;">
+
+          {% else %}
+
+          <div class="sm-col sm-col-12 sm-px2 bg-alternate" style="height: 100%; overflow-y: scroll;">
+
+          {% endif %}
+            <div class="p2">
+
+            <h2 class="mt0">{{post.title}}</h2>
+            <h4 class="link-light-grey regular mb2">{{post.get_field('wpcf-course-number')}}</h4>
+            {% if post.get_field('wpcf-syllabus-url') %}
+                <a class="inline-block" href="{{post.get_field('wpcf-syllabus-url')}}"><button class="btn btn-outline btn-accent-fill btn-outline-round" type="button" name="button"><span>Syllabus</span></button></a>
+              {% endif %}
+            {{post.content}}
+
+
+            {% if post.get_field('wpcf-credit-hours') %}
+            <h4 class="inline-block">Credit Hours: <p class="inline-block regular">{{post.get_field('wpcf-credit-hours')}}</p></h4>
+            {% endif %}
+
+            </div>
+          </div>
+      </div>
+      <!-- </div> -->
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+  </div>
+</td>
+  </tr>

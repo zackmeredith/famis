@@ -1,0 +1,118 @@
+<div id="freshmanyear" class="md-col md-col-6 px2 sm-px3 ">
+  <div class="clearfix ">
+
+  <h3>Freshman Year</h3>
+  <hr class="mb2">
+  <div id="freshmanfall" class="lg-col lg-col-6 ">
+    <table>
+      <tr>
+        <td style="font-weight:bold;">Fall</td>
+      </tr>
+      {% for post in fallfreshman.posts(99, 'course') %}
+        {% include 'partials/degree-guide-row.twig' %}
+      {% endfor %}
+    </table>
+  </div>
+  <div id="freshmanspring"  class="lg-col lg-col-6 ">
+    <table>
+      <tr>
+        <td style="font-weight:bold;">Spring</td>
+      </tr>
+    {% for post in springfreshman.posts(99, 'course') %}
+      {% include 'partials/degree-guide-row.twig' %}
+    {% endfor %}
+    </table>
+  </div>
+</div>
+</div>
+
+<div id="sophomoreyear" class="md-col md-col-6 px2 sm-px3 degree-guide-semester">
+  <div class="clearfix">
+
+  <h3>Sophomore Year</h3>
+  <hr class="mb2">
+  <div id="sophomorefall"  class="lg-col lg-col-6 ">
+    <table>
+      <tr>
+        <td style="font-weight:bold;">Fall</td>
+      </tr>
+
+      {% for post in fallsophomore.posts(99, 'course') %}
+        {% include 'partials/degree-guide-row.twig' %}
+      {% endfor %}
+    </table>
+  </div>
+
+  <div id="sophomorespring"  class="lg-col lg-col-6 ">
+    <table>
+      <tr>
+        <td style="font-weight:bold;">Spring</td>
+      </tr>
+
+    {% for post in springsophomore.posts(99, 'course') %}
+      {% include 'partials/degree-guide-row.twig' %}
+    {% endfor %}
+    </table>
+  </div>
+  </div>
+</div>
+
+<div id="junioryear" class="md-col md-col-6 px2 sm-px3 degree-guide-semester">
+  <div class="clearfix">
+  <h3>Junior Year</h3>
+  <hr class="mb2">
+  <div id="juniorfall"  class="lg-col lg-col-6 ">
+    <table>
+      <tr>
+        <td style="font-weight:bold;">Fall</td>
+      </tr>
+
+      {% for post in falljunior.posts(99, 'course') %}
+        {% include 'partials/degree-guide-row.twig' %}
+      {% endfor %}
+    </table>
+  </div>
+
+  <div id="juniorspring" class="lg-col lg-col-6 ">
+    <table>
+      <tr>
+        <td style="font-weight:bold;">Spring</td>
+      </tr>
+
+    {% for post in springjunior.posts(99, 'course') %}
+      {% include 'partials/degree-guide-row.twig' %}
+    {% endfor %}
+    </table>
+  </div>
+  </div>
+</div>
+
+<div id="senioryear" class="md-col md-col-6 px2 sm-px3 degree-guide-semester">
+  <div class="clearfix">
+  <h3>Senior Year</h3>
+  <hr class="mb2">
+  <div id="seniorfall"  class="lg-col lg-col-6 ">
+    <table>
+      <tr>
+        <td style="font-weight:bold;">Fall</td>
+      </tr>
+
+      {% for post in fallsenior.posts(99, 'course') %}
+        {% include 'partials/degree-guide-row.twig' %}
+      {% endfor %}
+    </table>
+  </div>
+
+  <div id="seniorspring"  class="lg-col lg-col-6 ">
+    <table>
+      <tr>
+        <td style="font-weight:bold;">Spring</td>
+      </tr>
+
+    {% for post in springsenior.posts(99, 'course') %}
+      {% include 'partials/degree-guide-row.twig' %}
+    {% endfor %}
+    </table>
+  </div>
+  </div>
+</div>

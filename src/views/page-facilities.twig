@@ -1,0 +1,54 @@
+{# View :: Facilities #}
+
+{% extends "base.twig" %}
+
+
+
+{% block content %}
+
+  <article class="post-type-{{page.post_type}} px1 sm-px2" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+
+    {# Content #}
+    <div class="clearfix p2" itemprop="articleBody">
+
+      {% for post in posts %}
+
+      <div class="sm-col sm-col-6 md-col-4 sm-px1 py2 mx-auto">
+
+        <div class="">
+
+        <div class="" style="background: url('{{post.thumbnail}}') center; background-size: cover; height: 300px;">
+
+        </div>
+        <div class="border px2 py1">
+
+
+          <h4>{{post.title}}</h4>
+          <p class="txt-light">{{post.content}}</p>
+
+          <a href="#" data-reveal-id="myModal{{post.ID}}">
+            View
+            </a>
+    <div id="myModal{{post.ID}}" class="reveal-modal" data-reveal>
+                <div class="container py4 px2 sm-p4">
+                  {{post.get_field('wpcf-section-two-body-txt')}}
+                </div>
+                <a class="close-reveal-modal">&#215;</a>
+
+        </div>
+
+          </div>
+          </div>
+
+
+        </div>
+
+    </div>
+
+      {% endfor %}
+
+    </div>
+
+  </article>
+
+{% endblock %}

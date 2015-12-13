@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////
-// Base Reset
+// Base Styles
 //////////////////////////////////////////////////////
 
 * {
@@ -11,24 +11,24 @@ body, html {
 	overflow-x: hidden;
 }
 
-.container {
-	max-width: 80em;
+html{
+  height: 100%;
+}
+body {
+  min-height: 100%;
+	position: relative;
 }
 
-input {
-	border: 1px solid #ccc;
-	border-radius: 15px 15px;
-	display: inline-block;
-	padding: 0.35rem 0.75rem;
-	transition: border-color 0.1s ease-in-out;
-	&:focus {
-		border-color: #111;
-		outline: none !important;
-	}
+.container {
+	max-width: 85em;
 }
 
 .link, .nav-list-item-link, .nav-link {
 	&:hover {
 	text-decoration: none;
 }
+}
+
+h1, h2, h3, h4, h5, h6, {
+  font-family: 'Avenir', 'Lato', Helvetica, sans-serif;
 }

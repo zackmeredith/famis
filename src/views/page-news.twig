@@ -2,34 +2,125 @@
 
 {% extends "base.twig" %}
 
-{% block content %}
+{% block header %}
+
 <div class="clearfix">
+  <div class="md-col md-col-8">
+    {% for post in main_feat_post.posts(1, 'post') %}
 
-  <article class="sm-col sm-col-6 p3 post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+    <div class="relative overlay-hover-dark" style="background: url('{{post.thumbnail}}') center; background-size: cover; height: 80vh;">
+      <!-- <div class="relative" style="background: url('http://unsplash.it/1400/900') center; background-size: cover; height: 80vh;"> -->
+      <div class="overlay"></div>
 
-    {# Content #}
-    <!-- <header>
-      <h1 itemprop="headline">
-        {{page.title}}
-      </h1>
-    </header> -->
+      <div class="hero-content white absolute bottom-0 p3">
+        <a class="white" href="{{post.link}}">
+          <h1 class="m0">{{post.title}}</h1>
+        </a>
+          <a class="accent-color relative hover-bar inline-block link-reset" href="{{post.category.link}}">
+            <h4 class="accent-color m0">
+              {{post.category}}
+            </h4>
+          </a>
 
-    {# Content #}
-    {% for post in posts %}
-      <div class="news-post">
-        {% include ['partials/snippet.twig'] %}
+
+
+      </div>
+      <div class="absolute top-0 left-0 accent-fill white" style="width: 320px;">
+        <div class="px3 py2">
+          <h3 class="m0" style="letter-spacing: 0.05em">
+            Featured News
+          </h3>
+        </div>
       </div>
 
+      <!-- <div class="absolute bottom-0 right-0 accent-fill" style="width: 150px; color: white">
+        <div class="px2">
+          <h5>
+            {{post.category}}
+          </h5>
+        </div>
+      </div> -->
+
+    </div>
+
     {% endfor %}
-
-
-
-  </article>
-
-  <div class="sm-col-right sm-col-4 p2" style="background-color: #f5f5f5;">
-    <h3>Featured</h3>
   </div>
+  <div class="md-col md-col-4" style="height: 80vh;">
+    {% for post in secondary_feat_post.posts(2, 'post') %}
+    <div class="secondary-feat-post relative overlay-hover-dark" style="background: url('{{post.thumbnail}}') center; background-size: cover;">
+      <!-- <div class="col-12 table secondary-feat-post relative" style="background: #222"> -->
+      <div class="overlay"></div>
+      <div class="absolute bottom-0 left-0 p3">
+        <a class="white" href="{{post.link}}">
+          <h3 class="m0">{{post.title}}</h3>
+        </a>
+        <a class="accent-color relative hover-bar inline-block link-reset" href="{{post.category.link}}">
+          <h4 class="accent-color m0 relative">
+            {{post.category}}
+          </h4>
+        </a>
+      </div>
+      <!-- <div class="absolute bottom-0 right-0 accent-fill" style="width: 150px; color: white">
+        <div class="px2">
+          <h5>
+            {{post.category}}
+          </h5>
+        </div>
+      </div> -->
+    </div>
+
+    {% endfor %}
+  </div>
+
 </div>
 
-{% include ['partials/pagination.twig'] %}
+{% endblock %}
+
+{% block content %}
+
+<article class="post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+  <div class="clearfix mb2 sm-mb4 container">
+    <div class="">
+      <div class="py3">
+        <h4 class="center py2">Recent Stories</h4>
+        <hr>
+      </div>
+      {# Content #}
+      <div class="clearfix">
+        {% for post in posts %}
+        <div class="news-post sm-col sm-col-6 md-col-3 px2 sm-p2 mx-auto">
+          {% include ['partials/snippets/snippet-post.twig'] %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="">
+      <div class="py3">
+
+        <h4 class="center py2">Film & Music Industry Forum</h4>
+        <hr>
+      </div>
+      {# Content #}
+      <div class="clearfix">
+        {% for post in forum.posts(8) %}
+        <div class="news-post sm-col sm-col-6 md-col-3 p2 mx-auto">
+          {% include ['partials/snippets/snippet-post.twig'] %}
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+
+</article>
+<!--
+<div class="sm-col-right sm-col-4 bg-grey-light p2">
+<h5 class="uppercase">Featured</h5>
+{% include ['news-sidebar.twig'] %}
+</div>
+</div> -->
+
+<!-- <div class="py2">{% include ['partials/pagination.twig'] %}</div> -->
 {% endblock %}

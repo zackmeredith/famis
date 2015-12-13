@@ -1,11 +1,11 @@
 .btn {
   font-family: inherit;
   font-size: inherit;
-  font-weight: bold;
+  font-weight: normal;
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  line-height: 1.125rem;
+  line-height: 1rem;
   padding: .5rem 1rem;
   margin: 0;
   height: auto;
@@ -14,6 +14,7 @@
   -webkit-appearance: none;
   color: inherit;
   background-color: transparent;
+  transition: all 0.05s ease-in-out;
 }
 
 .btn:hover {
@@ -23,7 +24,7 @@
 .btn:focus {
   outline: none;
   border-color: rgba(0,0,0,.125);
-  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+  //box-shadow: 0 0 0 3px rgba(0,0,0,.25);
 }
 
 ::-moz-focus-inner {
@@ -34,7 +35,7 @@
 .btn-primary {
   color: #fff;
   background-color: #0074d9;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .btn-primary:hover {
@@ -58,17 +59,54 @@
 }
 
 .btn-outline {
-  border-radius: 3px;
+  border-radius: 2px;
+}
+
+.btn-outline-round {
+  border-radius: 30px;
+}
+
+.btn-accent {
+  color: $maroon;
+  border-color: $maroon;
+}
+
+.btn-grey {
+  color: #cecece;
+  border-color: #cecece;
+}
+
+.btn-accent-fill {
+  background: $maroon;
+  border-color: $maroon;
+  color: white;
+}
+
+.btn-secondary-fill {
+  border-radius: 2px;
+  background: $secondary;
+  border-color: $secondary;
+  color: white;
+
+  &:hover {
+    border-color: $secondary;
+    background: $secondary;
+  }
 }
 
 .btn-outline:hover {
-  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.0625);
+  // box-shadow: inset 0 0 0 20rem rgba(0,0,0,.0625);
+  border-color: $maroon;
+  background: $maroon;
+  color: white;
 }
 
 .btn-outline:active {
-  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.125),
-    inset 0 3px 4px 0 rgba(0,0,0,.25),
-    0 0 1px rgba(0,0,0,.125);
+  // box-shadow: inset 0 0 0 20rem rgba(0,0,0,.125),
+  //   inset 0 3px 4px 0 rgba(0,0,0,.25),
+  //   0 0 1px rgba(0,0,0,.125);
+  background: currentcolor;
+  color: white;
 }
 
 .btn-outline:disabled,
@@ -89,7 +127,7 @@
       right: 0;
       transition-duration: 0.5s;
       cursor: pointer;
-      @media screen and (min-width: 64em) {
+      @media screen and (min-width: 74em) {
           display: none;
       }
       &-icon {
@@ -121,15 +159,15 @@
       &.open {
           .btn-back-icon {
               transition: 0.5s;
-              background-color: $accent-color;
+              background-color: $maroon;
               //transform: translate(-3em);
               &:before {
                   transform: rotateZ(45deg) scaleX(0.75) translate(10px, -3px);
-                  background-color: $accent-color;
+                  background-color: $maroon;
               }
               &:after {
                   transform: rotateZ(-45deg) scaleX(0.75) translate(10px, 3px);
-                  background-color: $accent-color;
+                  background-color: $maroon;
               }
           }
       }

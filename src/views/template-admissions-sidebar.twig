@@ -1,0 +1,141 @@
+{# View :: Page - Apply #}
+
+{% extends "base.twig" %}
+
+
+{% block content %}
+
+  <article class="sm-px3 clearfix post-type-{{page.post_type}} sm-py3" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+
+    {# Content #}
+    <div class="md-col md-col-8 py2">
+
+      {% if page.get_field('wpcf-application-accordion') %}
+      <!-- <h2 class="mt0">Step One: <span>Apply to Loyola University New Orleans</span></h2>
+      <ul class="accordion-list list-reset py1">
+        <li class="accordion-list-item">
+          <input type="checkbox" checked>
+          <i class="accordion-list-icon mt1"></i>
+          <h4 class="accordion-list-title">{{page.get_field('wpcf-accordion-tab-1-title')}}</h4>
+          <span class="accordion-list-expanded-text" style="overflow-y: scroll;">{{page.get_field('wpcf-accordion-tab-1')}}</span>
+            </li>
+            <li class="accordion-list-item">
+              <input type="checkbox" checked>
+              <i class="accordion-list-icon mt1"></i>
+              <h4 class="accordion-list-title">{{page.get_field('wpcf-accordion-tab-2-title')}}</h4>
+              <span class="accordion-list-expanded-text" style="overflow-y: scroll;">{{page.get_field('wpcf-accordion-tab-2')}}</span>
+                </li>
+          </ul>
+
+      <h2>Step Two: <span>Apply to FAMIS</span></h2>
+
+      <div class="">
+        <ul class="accordion-list list-reset py1">
+          <li class="accordion-list-item">
+            <input type="checkbox" checked>
+            <i class="accordion-list-icon mt1"></i>
+            <h4 class="accordion-list-title">{{page.get_field('wpcf-accordion-tab-3-title')}}</h4>
+            <span class="accordion-list-expanded-text" style="overflow-y: scroll;">{{page.get_field('wpcf-accordion-tab-3')}}</span>
+            <hr class="mt0">
+          </li>
+          <li class="accordion-list-item">
+            <input type="checkbox" checked>
+            <i class="accordion-list-icon mt1"></i>
+            <h4 class="accordion-list-title">{{page.get_field('wpcf-accordion-tab-4-title')}}</h4>
+            <span class="accordion-list-expanded-text" style="overflow-y: scroll;">{{page.get_field('wpcf-accordion-tab-4')}}</span>
+            <hr class="mt0">
+          </li>
+          <li class="accordion-list-item">
+            <input type="checkbox" checked>
+            <i class="accordion-list-icon mt1"></i>
+            <h4 class="accordion-list-title">{{page.get_field('wpcf-accordion-tab-5-title')}}</h4>
+            <span class="accordion-list-expanded-text" style="overflow-y: scroll;">{{page.get_field('wpcf-accordion-tab-5')}}</span>
+
+          </li>
+        </ul>
+      </div> -->
+
+
+
+
+      <div class="accordion">
+        <h2 class="mt0">Step One: APPLY TO LOYOLA UNIVERSITY</h2>
+            <dl>
+              <dt>
+                <a href="#accordion1" aria-expanded="false" aria-controls="accordion1" class="accordion-title accordionTitle js-accordionTrigger">{{ page.get_field('wpcf-accordion-tab-1-title') }}</a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" style="overflow-y: scroll;" id="accordion1" aria-hidden="true">
+                <div class="accordion__panel-content">
+                  {{page.get_field('wpcf-accordion-tab-1')}}
+                </div>
+              </dd>
+              <dt>
+                <a href="#accordion2" aria-expanded="false" aria-controls="accordion2" class="accordion-title accordionTitle js-accordionTrigger">
+                  {{page.get_field('wpcf-accordion-tab-2-title')}}</a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" id="accordion2" aria-hidden="true">
+              <div class="accordion__panel-content">
+                {{page.get_field('wpcf-accordion-tab-2')}}
+              </div>
+              </dd>
+              <h2>Step Two: APPLY TO FAMIS</h2>
+              <dt>
+                <a href="#accordion3" aria-expanded="false" aria-controls="accordion3" class="accordion-title accordionTitle js-accordionTrigger">
+                  {{page.get_field('wpcf-accordion-tab-3-title')}}
+                </a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" style="overflow-y: scroll;"  id="accordion3" aria-hidden="true">
+                <div class="accordion__panel-content">
+                {{page.get_field('wpcf-accordion-tab-3')}}
+              </div>
+              </dd>
+              <dt>
+                <a href="#accordion3" aria-expanded="false" aria-controls="accordion3" class="accordion-title accordionTitle js-accordionTrigger">
+                  {{page.get_field('wpcf-accordion-tab-3-title')}}
+                </a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" style="overflow-y: scroll;"  id="accordion3" aria-hidden="true">
+                <div class="accordion__panel-content">
+                {{page.get_field('wpcf-accordion-tab-3')}}
+              </div>
+              </dd>
+              <dt>
+                <a href="#accordion3" aria-expanded="false" aria-controls="accordion3" class="accordion-title accordionTitle js-accordionTrigger">
+                  {{page.get_field('wpcf-accordion-tab-3-title')}}
+                </a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" style="overflow-y: scroll;"  id="accordion3" aria-hidden="true">
+                <div class="accordion__panel-content">
+                {{page.get_field('wpcf-accordion-tab-3')}}
+              </div>
+              </dd>
+            </dl>
+
+          </div>
+
+
+          {% endif %}
+        </div>
+
+
+
+        <div class="md-col md-col-3 sm-py0 sm-ml4 sidebar-menu">
+          <div class="md-hide">
+            <span class="sidebar-nav-drop-button block">
+            <h3 class="sm-mt0 inline-block">Admissions Menu</h3>
+            <span class="sidebar-nav-drop-icon">
+              <svg id="triangleDown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="currentcolor">
+                <path d="M4 8 H28 L16 26 z"></path>
+              </svg>
+            </span>
+          </span>
+          <hr>
+          </div>
+          <div class="sidebar-nav md-show py2">
+          {% include ['admissions-sidebar.twig'] %}
+          </div>
+        </div>
+
+
+  </article>
+{% endblock %}

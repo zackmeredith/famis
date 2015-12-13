@@ -12,7 +12,7 @@ var gulp          = require('gulp')
 // Build stylesheets from source Sass files, autoprefix, and make a minified copy (for debugging) with libsass
 gulp.task('styles-libsass', function() {
   return gulp.src(config.build.src)
-  .pipe(plugins.sourcemaps.init())
+  // .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass(config.libsass))
     .pipe(rucksack())
     .pipe(plugins.postcss([

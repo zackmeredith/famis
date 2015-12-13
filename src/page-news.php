@@ -11,7 +11,7 @@ global $paged;
 if (!isset($paged) || !$paged){
     $paged = 1;
 }
-$context = Timber::get_context();
+
 $args = array(
     'post_type' => 'post',
     'posts_per_page' => 12,
@@ -20,10 +20,14 @@ $args = array(
 /* THIS LINE IS CRUCIAL */
 /* in order for WordPress to know what to paginate */
 /* your args have to be the defualt query */
-    query_posts($args);
+query_posts($args);
 
-$context['posts'] = Timber::get_posts();
+$data = Timber::get_context();
+$data['news_sidebar'] = Timber::get_widgets('news_sidebar');
 $page = new TimberPost();
-$context['page'] = $page;
-$context['pagination'] = Timber::get_pagination();
-Timber::render( 'page-news.twig', $context );
+$data['page'] = $page;
+$data['posts'] = Timber::get_posts();
+$data['posts'] = $posts;
+$data['pagination'] = Timber::get_pagination();
+
+Timber::render( 'page-news.twig', $data );

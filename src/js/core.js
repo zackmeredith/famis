@@ -1,5 +1,86 @@
 jQuery( document ).ready( function( $ ) {
 
+///////////////////////////////
+// smooth scrolling
+//////////////////////////////
+$(function() {
+  $("a[rel^='scrolling']").click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1500);
+      }
+    }
+  });
+});
+
+
+///////////////////////////////
+// Accordion
+//////////////////////////////
+
+(function(){
+	var d = document,
+	accordionToggles = d.querySelectorAll('.js-accordionTrigger'),
+	setAria,
+	setAccordionAria,
+	switchAccordion,
+  touchSupported = ('ontouchstart' in window),
+  pointerSupported = ('pointerdown' in window);
+
+  skipClickDelay = function(e){
+    e.preventDefault();
+    e.target.click();
+  }
+
+		setAriaAttr = function(el, ariaType, newProperty){
+		el.setAttribute(ariaType, newProperty);
+	};
+	setAccordionAria = function(el1, el2, expanded){
+		switch(expanded) {
+      case "true":
+      	setAriaAttr(el1, 'aria-expanded', 'true');
+      	setAriaAttr(el2, 'aria-hidden', 'false');
+      	break;
+      case "false":
+      	setAriaAttr(el1, 'aria-expanded', 'false');
+      	setAriaAttr(el2, 'aria-hidden', 'true');
+      	break;
+      default:
+				break;
+		}
+	};
+//function
+switchAccordion = function(e) {
+	e.preventDefault();
+	var thisAnswer = e.target.parentNode.nextElementSibling;
+	var thisQuestion = e.target;
+	if(thisAnswer.classList.contains('is-collapsed')) {
+		setAccordionAria(thisQuestion, thisAnswer, 'true');
+	} else {
+		setAccordionAria(thisQuestion, thisAnswer, 'false');
+	}
+  	thisQuestion.classList.toggle('is-collapsed');
+  	thisQuestion.classList.toggle('is-expanded');
+		thisAnswer.classList.toggle('is-collapsed');
+		thisAnswer.classList.toggle('is-expanded');
+
+  	thisAnswer.classList.toggle('animateIn');
+	};
+	for (var i=0,len=accordionToggles.length; i<len; i++) {
+		if(touchSupported) {
+      accordionToggles[i].addEventListener('touchstart', skipClickDelay, false);
+    }
+    if(pointerSupported){
+      accordionToggles[i].addEventListener('pointerdown', skipClickDelay, false);
+    }
+    accordionToggles[i].addEventListener('click', switchAccordion, false);
+  }
+})();
+
 ///////////////////////////////////////
 // Menu Button
 /////////////////////////////////////
@@ -11,8 +92,14 @@ $('.menu').click(function(){
 
 
 $('.nav-drop-button').on('click', function(){
-  $(this).toggleClass('nav-drop-button-flip');
-  $(this).next().toggleClass('nav-drop-open');
+  $(this).parent().toggleClass('nav-drop-open');
+  $(this).parent().siblings().removeClass('nav-drop-open');
+
+});
+
+$('.sidebar-nav-drop-button').on('click', function(){
+  $('.sidebar-nav').toggleClass('md-show');
+  $('.sidebar-nav-drop-icon').toggleClass('flip');
 });
 
 ///////////////////////////////////////
@@ -39,71 +126,6 @@ $('.video-carousel').slick({
   autoplay: false,
   slidesToShow: 3,
   slidesToScroll: 1,
-});
-
-// Hide Header on on scroll down
-var didScroll;
-var lastScrollTop = 0;
-var delta = 5;
-var navbarHeight = $('.nav').outerHeight();
-
-$(window).scroll(function(event){
-    didScroll = true;
-});
-
-setInterval(function() {
-    if (didScroll) {
-        hasScrolled();
-        console.log('hasScrolled');
-        didScroll = false;
-    }
-}, 250);
-
-function hasScrolled() {
-    var st = $(this).scrollTop();
-
-    // Make sure they scroll more than delta
-    if(Math.abs(lastScrollTop - st) <= delta) {
-        return;
-      }
-
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > navbarHeight && $(window).width() > 1085){
-        // Scroll Down
-        $('.nav').removeClass('nav-down').addClass('nav-up');
-    }
-      else if ($(window).scrollTop() < 300 && $(window).width() > 1085) {
-        $('.nav').removeClass('nav-down').removeClass('nav-up');
-      }
-     else {
-        // Scroll Up
-        if(st + $(window).height() < $(document).height()) {
-            console.log('nav-down');
-            $('.nav').removeClass('nav-up').addClass('nav-down');
-        }
-    }
-
-    lastScrollTop = st;
-}
-
-
-///////////////////////////////
-// smooth scrolling
-//////////////////////////////
-$(function() {
-$('a[href*=#]:not([href=#])').click(function() {
-  if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
-    var target = $(this.hash);
-    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-    if (target.length) {
-      $('html,body').animate({
-        scrollTop: target.offset().top
-      }, 1000);
-      return false;
-      }
-    }
-  });
 });
 
 /********************
@@ -145,7 +167,24 @@ $('.toggle-contact').click(function() {
   $('.modal-overlay').click(function() {
       $('.modal-contact-form').removeClass('modal-showing');
       $('body').removeClass('stop-scroll');
+
   });
+
+  ////////////////////////////////
+  //
+  ///////////////////////////
+
+
+
+var openclose;
+  openclose = function () {
+          $('.open-close-button').click(function () {
+          $(this).toggleClass('open');
+          $('.degree-guide-wrapper').toggleClass('sm-show');
+      });
+  };
+openclose();
+
 });
 
 

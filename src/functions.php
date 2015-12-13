@@ -23,6 +23,7 @@ class FamisSite extends TimberSite {
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
+		add_theme_support( 'woocommerce' );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
@@ -93,11 +94,20 @@ function myfoo( $text ) {
 function arphabet_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => 'Sidebar 1',
-		'id'            => 'sidebar-1',
+		'name'          => 'News Sidebar',
+		'id'            => 'news_sidebar',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="rounded srt">',
+		'before_title'  => '<h2 class="srt">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Admissions Sidebar',
+		'id'            => 'admissions_sidebar',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="mt0">',
 		'after_title'   => '</h2>',
 	) );
 
@@ -105,10 +115,10 @@ function arphabet_widgets_init() {
 add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 
-//* Make Font Awesome available
-// add_action( 'wp_enqueue_scripts', 'enqueue_font_awesome' );
-// function enqueue_font_awesome() {
-//
-// 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
-//
-// }
+//Make Font Awesome available
+add_action( 'wp_enqueue_scripts', 'enqueue_font_awesome' );
+function enqueue_font_awesome() {
+
+	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
+
+}

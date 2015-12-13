@@ -1,0 +1,46 @@
+{# View :: Single faculty-member #}
+
+{% extends "base.twig" %}
+
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+
+
+{# Header #}
+<header class="bg-alternate">
+  <div class="clearfix container py2 sm-py4">
+
+    <div class="sm-col sm-col-4">
+      <img class="block mx-auto br-circle" src="{{post.thumbnail|resize(300, 300)}}" alt="faculty photo" />
+    </div>
+
+    <div class="sm-col sm-col-8 px2">
+      <h2 itemprop="headline">
+        {{post.title}}
+      </h2>
+      <h4 class="regular link-light-grey mb3">{{post.get_field('wpcf-job-title')}}</h4>
+      <blockquote class="ml0" cite="http://">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <cite>&nbsp;&nbsp;Some Guy</cite>
+      </blockquote>
+    </div>
+
+  </div>
+</header>
+
+<article class="post-type-{{post.post_type}} container sm-px4 py2 sm-py4" id="post-{{post.ID}}" role="article" itemscope itemtype="http://schema.org/Article">
+
+
+
+  {# Content #}
+  <div class="sm-px4" itemprop="articleBody">
+    {{post.content}}
+  </div>
+
+</article>
+
+{% endblock %}

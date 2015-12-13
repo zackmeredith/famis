@@ -5,70 +5,53 @@
 
 {% block content %}
 
-  <article class="post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+<div class="degree-grid white clearfix">
 
-    {# Content #}
+  {% for post in posts %}
+    {% include ['partials/degree-block.twig'] %}
+  {% endfor %}
 
-    <div class="clearfix container py4 mb4">
-      <div class="sm-col sm-col-6 px2">
-        <h1 class="h1">Find the program for you</h1>
-        <p>
+</div>
+
+<article class="post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+
+  {# Content #}
+
+  <div class="clearfix container px1 py4 mb2">
+    <div class="mx-auto" style="max-width: 760px;">
+      <div class="">
+        <div class="tooltip-parent relative">
+
+          <h1 class="h1 center">Find the program for <span class="accent-color">you</span>.</h1>
+          <div class="tooltip" style="font-size: 0.9rem;">
+            <h5 class="mt0">Students First</h5>
+            <p>We believe that students come first. Our professors and staff are here to help you succeed.</p>
+            <a href="/contact-us"><button class="btn btn-outline btn-grey" type="button" name="button">Contact Us</button></a>
+            <!-- <a href="#"><button class="btn btn-outline btn-grey" type="button" name="button">Learn More</button></a> -->
+            <div class="arrow"></div>
+          </div>
+        </div>
+
+        <hr class="hr-sm py1">
+        <br>
+        <!-- <img class="mx-auto block" src="{{bloginfo('stylesheet_directory')~'/img/degree-icon.svg'}}" alt="" /> -->
+        <h4 class="link-light-grey regular center">Your path to a career in a creative profession.</h4>
+        <br>
+        <p class="p2">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-      </div>
-      <div class="sm-col sm-col-6 px2 center">
-        <iframe class="block mx-auto" width="560" height="315" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="degree-grid white clearfix">
-
-      {% for post in posts %}
-      {% include ['partials/degree-block.twig'] %}
-      {% endfor %}
-
-    </div>
-
-    <div class="clearfix mt4 mb4">
-      <div class="sm-col sm-col-6 center">
-        <h3>Meet our Students</h3>
-        <!-- <div class="p3 video-carousel black">
-          <div class="p1">
-            <iframe class="block mx-auto" width="100%" height="100%" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="p1">
-            <iframe class="block mx-auto" width="100%" height="100%" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="p1">
-            <iframe class="block mx-auto" width="100%" height="100%" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="p1">
-            <iframe class="block mx-auto" width="100%" height="100%" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div> -->
-
-        <button class="btn btn-outline" type="button" name="button">View More</button>
-      </div>
-      <div class="sm-col sm-col-6 center">
-        <h3>Meet our Faculty</h3>
-        <!-- <div class="p3 video-carousel black">
-          <div class="p1">
-            <iframe class="block mx-auto" width="100%" height="100%" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="p1">
-            <iframe class="block mx-auto" width="100%" height="100%" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="p1">
-            <iframe class="block mx-auto" width="100%" height="100%" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="p1">
-            <iframe class="block mx-auto" width="100%" height="100%" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div> -->
-        <button class="btn btn-outline" type="button" name="button">View More</button>
+        <div class="center py2">
+          <a href="https://admissions.loyno.edu/register/inquiryform" target="_blank"><button class="btn btn-outline btn-grey py2" type="button" name="button"><span>Request Information</span></button></a>
+        </div>
       </div>
     </div>
 
-  </article>
+  </div>
+
+
+
+
+
+</article>
 
 {% endblock %}

@@ -2,30 +2,49 @@
 
 {% extends "base.twig" %}
 
+{% block header_no_img %}
+
+<hr>
+
+{% endblock %}
+
+
 {% block content %}
 
-  {% include "partials/category.twig" %}
-  {% include "partials/tags.twig" %}
-
-  <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}" role="article" itemscope itemtype="http://schema.org/Article">
+  <article class="post-type-{{post.post_type}} p2 sm-p4 container" style="max-width: 960px;" id="post-{{post.ID}}" role="article" itemscope itemtype="http://schema.org/Article">
 
     {# Header #}
-    <header>
+
       <h1 itemprop="headline">
         {{post.title}}
       </h1>
-    </header>
+
 
     {# Author / Date #}
     {% include "partials/post/post-meta.twig" %}
+    <br>
+
+    {% if post.get_field('wpcf-video-embed-code') %}
+    <div class="flex-video widescreen">
+      {{video}}
+    </div>
+    {% endif %}
+
 
     {# Content #}
     <div itemprop="articleBody">
+      <div class="py2">
+
+
       {{post.content}}
+
+      </div>
+
+
     </div>
 
-    {% include "partials/comments.twig" %}
-
+    {% include "partials/category.twig" %}
+    {% include "partials/tags.twig" %}
   </article>
 
 {% endblock %}

@@ -311,6 +311,7 @@ hr {
 
 .bold    { font-weight: bold }
 .regular { font-weight: normal }
+.lighter   { font-weight: 300 }
 .italic  { font-style: italic }
 .caps    { text-transform: uppercase; letter-spacing: .2em; }
 
@@ -846,5 +847,3 @@ hr {
 .bg-lighten-2 { background-color: rgba(255,255,255,.125) }
 .bg-lighten-3 { background-color: rgba(255,255,255,.25) }
 .bg-lighten-4 { background-color: rgba(255,255,255,.5) }
-
-

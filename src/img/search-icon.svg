@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 1 + Oval 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-1" sketch:type="MSArtboardGroup" transform="translate(-328.000000, -195.000000)">
+            <g id="Rectangle-1-+-Oval-1" sketch:type="MSLayerGroup" transform="translate(328.000000, 196.000000)">
+                <path d="M0.312073086,14.8002322 C0.174500512,14.6626596 0.172168635,14.4419423 0.308837746,14.3052732 L5.53898963,9.07512127 C5.67477537,8.93933553 5.9032205,8.94762846 6.03394865,9.07835661 L7.04424875,10.0886567 C7.18182133,10.2262293 7.1841532,10.4469466 7.04748409,10.5836157 L1.81733221,15.8137676 C1.68154647,15.9495534 1.45310134,15.9412604 1.32237319,15.8105323 L0.312073086,14.8002322 L0.312073086,14.8002322 Z" id="Rectangle-1" fill="#333333" sketch:type="MSShapeGroup"></path>
+                <ellipse id="Oval-1" stroke="#3F3F3F" stroke-width="0.8" sketch:type="MSShapeGroup" cx="10.4827586" cy="5.33333333" rx="5.51724138" ry="5.33333333"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

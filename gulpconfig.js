@@ -28,7 +28,7 @@ module.exports = {
   browsersync: {
     files: [build+'/**', '!'+build+'/**.map'] // Exclude map files
   , notify: false // In-line notifications (the blocks of text saying whether you are connected to the BrowserSync server or not)
-  , open: true // Set to false if you don't like the browser window opening automatically
+  , open: false // Set to false if you don't like the browser window opening automatically
   , port: 9000 // Port number for the live version of the site; default: 3000
   , proxy: 'wp:8888' // Using a proxy instead of the built-in server as we have server-side rendering to do via WordPress
   , ghostMode: {
@@ -42,11 +42,11 @@ module.exports = {
 
   images: {
     build: { // Copies images from `src` to `build`; does not optimize
-      src: src+'**/*(*.png|*.jpg|*.jpeg|*.gif)'
+      src: src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)'
     , dest: build
     }
   , dist: {
-      src: [dist+'**/*(*.png|*.jpg|*.jpeg|*.gif)', '!'+dist+'screenshot.png']
+      src: [dist+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)', '!'+dist+'screenshot.png']
     , imagemin: {
         optimizationLevel: 7
       , progressive: true
@@ -62,8 +62,8 @@ module.exports = {
     , pg8: ['pg8', 'core']
     }
   , chunks: { // Chunks are arrays of globs matching source files that combine to provide specific functionality
-      core: [ bower+'slick-carousel/slick/slick.js', src+'js/core.js' ]
-      , pg8: [bower+'html5-history-api/history.js', bower+'wp-ajax-page-loader/wp-ajax-page-loader.js', src+'js/page-loader.js']
+      core: [ bower+'slick-carousel/slick/slick.js', src+'js/reveal.js', src+'js/core.js']
+      , pg8: [ bower+'html5-history-api/history.js', bower+'wp-ajax-page-loader/wp-ajax-page-loader.js', src+'js/page-loader.js']
     }
   , dest: build+'js/' // Where the scripts end up
   , lint: {

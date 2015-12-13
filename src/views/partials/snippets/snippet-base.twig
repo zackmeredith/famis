@@ -5,7 +5,7 @@
 
     {# Thumbnail #}
     {% if post.get_thumbnail %}
-      <div class="" style="background: url('{{post.thumbnail.src|resize(600, 300)}}') center top; background-size: cover; height: 300px; width: 100%;">
+      <div class="" style="background: url('{{post.thumbnail.src|resize(300, 300)}}') center; background-size: cover; height: 300px; width: 100%;">
 
       </div>
       <meta itemprop="thumbnailUrl" content="{{post.thumbnail.src}}">

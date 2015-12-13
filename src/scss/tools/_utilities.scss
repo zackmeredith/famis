@@ -34,6 +34,189 @@
   transition: all 0.3s ease-in-out;
 }
 
+.overlay-dark {
+  background: rgba(0,0,0,0.5);
+}
+
 .fill-container {
   height: 100%; width: 100%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.accent-fill {
+  background-color: $maroon;
+}
+
+.accent-hover {
+  &:hover {
+    color: $maroon;
+  }
+}
+
+.accent-color {
+  color: $maroon;
+}
+
+.bg-grey-light {
+  background: #fafafa;
+}
+
+.bg-alternate {
+  background: #fafafa;
+}
+
+.bg-white {
+  background: white;
+}
+
+.bg-cover-center {
+  background-size: cover;
+  background-position: center;
+}
+
+.txt-light-grey {
+  color: #fafafa;
+}
+
+.txt-md-grey {
+  color: #bdbdbd;
+}
+
+.txt-dark-grey {
+  color: #7B7C7E;
+}
+
+.color-light-grey {
+  color: $light-grey;
+}
+
+.color-md-grey {
+  color: $md-grey;
+}
+
+.color-dark-grey {
+  color: $dark-grey;
+}
+
+.txt-light {
+  font-weight: 300;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize:first-letter {
+  text-transform: capitalize;
+}
+
+.flex-video {
+    height: 0;
+    // margin-bottom: 0.88889rem;
+    overflow: hidden;
+    // padding-bottom: 67.5%;
+    // padding-top: 1.38889rem;
+    position: relative;
+}
+
+.flex-video iframe, .flex-video object, .flex-video embed, .flex-video video {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+.flex-video.widescreen {
+    padding-bottom: 56.34%;
+}
+
+.link-light-grey {
+	text-decoration: none;
+	transition: color 0.1s ease-in-out;
+	color: #ADADAD;
+
+	&:hover {
+		color: darken(#999, 40%);
+		text-decoration: none;
+
+	}
+
+}
+
+.secondary-text-link {
+	text-decoration: none;
+	transition: color 0.1s ease-in-out;
+	color: #A5A5A5;
+
+	&:hover {
+		color: darken(#555, 40%);
+		text-decoration: none;
+
+	}
+
+}
+
+.scrollable {
+  overflow-y: auto;
+  // padding-bottom: 2rem;
+}
+
+.flip {
+  transform: rotate(180deg);
+}
+
+.title-case {
+  text-transform: capitalize;
+}
+
+.sm-mx-reset {
+
+  @media screen and (min-width: 40em) {
+  margin-left: 0;
+  margin-right: 0;
+}
+}
+
+.hr-sm-accent {
+  width: 100px;
+  background-color: $maroon;
+}
+
+
+.hr-sm {
+  width: 200px;
+}
+
+.border-accent {
+  border-color: $maroon;
+}
+
+.br-circle {
+  border-radius: 100%;
+}
+
+
+.postid-19873 {
+  #degreeguideanchor {
+    // display: none;
+  }
+}
+
+.link-reset {
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.overlay-hover-dark {
+    &:hover {
+      .overlay {
+      background: rgba(0,0,0,0.6);
+    }
+  }
 }

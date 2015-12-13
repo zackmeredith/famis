@@ -4,19 +4,17 @@
 
 {% extends "base.twig" %}
 
-{% block header %}
 
-<header class="page-header">
-  <div class="flex flex-center flex-justify sm-px3">
+{% block header_title %}
+<div class="center table-cell align-middle relative white">
+  <span class="uppercase block degree-block-degtype">{{post.get_field('wpcf-degree-type')}}</span>
 
-  <h1 class="page-header-title m0 sm-py4" itemprop="headline">
-    {{page.title}}
-  </h1>
-  <button class="btn btn-outline" type="button" name="button">View Degree Guide</button>
-  </div>
-</header>
-
+<h2 class="page-header-title mt1" style="letter-spacing: 0.02em;">{{post.get_field('wpcf-degree-title-no-type')}}</h2>
+<hr class="mb3" style="background: white; width: 300px;">
+<a class="py2" href="#"><button class="btn btn-accent-fill btn-round btn-outline-round" type="button" name="button"><span class="p3">Apply Now</span></button></a>
+</div>
 {% endblock %}
+
 
 {% block content %}
 
@@ -24,50 +22,162 @@
 
     {# Content #}
 
-    <div class="clearfix container sm-py4 mb4">
-      <div class="md-col md-col-6 px2">
-        <h1 class="h1">Find the program for you</h1>
+    <div class="clearfix container relative mb4 py2">
+      <div class="p2 relative sidebar-menu">
+        <span class="sidebar-nav-drop-button block md-hide">
+          <h4 class="m0 inline-block small py2">Degree Links</h4>
+          <svg id="triangleDown" class="sidebar-nav-drop-button-icon md-hide" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="currentcolor">
+            <path d="M4 8 H28 L16 26 z"></path>
+          </svg>
+        </span>
+        <ul class="list-reset md-show sidebar-nav inline-block py1 mb0">
+          <li class="py1 px2 inline-block"><a href="/degree-programs" class="secondary-text-link txt-light"><i class="fa fa-chevron-left mr1"></i>All Degrees</a></li>
+          <li class="py1 px2 inline-block"><a class="secondary-text-link txt-light"  rel="scrolling" href="#degreeguideanchor">Degree Guide</a></li>
+          <li class="py1 px2 inline-block"><a class="secondary-text-link txt-light" rel="scrolling" href="#careeranchor">Careers</a></li>
+          <li class="py1 px2 inline-block"><a class="secondary-text-link txt-light" rel="scrolling" href="#studentworkanchor">Student Work</a></li>
+          <li class="py1 px2 inline-block"><a class="secondary-text-link txt-light" href="{{page.get_field('wpcf-dpcl-url')}}" target="_blank">DPCL</a></li>
+        </ul>
+        <hr class="mt0 mb4">
+      </div>
+
+      <div class="md-col md-col-6 sm-mr4 p2">
+        <h1 class="h1 mt0 capitalize" style="font-size: 2.5rem;">{{page.get_field('wpcf-highlighted-text')}}</h1>
+        <hr class="hr-sm-accent ml0 mb4">
+
+        <p class="txt-light-grey mb2">{{page.content}}</p>
+        <div class="py2">
+
+        <h4 class="mb2">Get Started</h4>
+        <a class="mb2 inline-block" href="https://admissions.loyno.edu/register/inquiryform" target="_blank"><button class="mb2 block btn btn-accent btn-outline" type="button" name="button">Request Information</button></a>
+        <a class="mb2 inline-block sm-px1" href="/how-to-apply"><button class="block btn btn-accent btn-outline" type="button" name="button">How to Apply</button></a>
+        </div>
+
+      </div>
+      <div class="md-col md-col-5 p2">
+
+
+        <div class="relative sm-mt2 border-bottom rounded" style="border-width: 12px; border-color: #ebebeb;">
+
+        <div class="mx-auto center table relative fill-container" style="border-bottom: 12px; border-color: #ebebeb; background: url('{{page.thumbnail}}') center; background-size: cover; min-height: 320px; min-width: 320px; ">
+          <div class="">
+
+          </div>
+          <div class="table-cell align-middle relative white">
+
+
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+      <!-- <div class="px2 sm-col sm-col-12">
+        <h4 class="mb2">Get Started</h4>
+        <a class="mb2 inline-block" href="https://admissions.loyno.edu/register/inquiryform" target="_blank"><button class="mb2 block btn btn-accent btn-outline" type="button" name="button">Request Information</button></a>
+        <a class="mb2 inline-block sm-px1" href="/how-to-apply"><button class="block btn btn-accent btn-outline" type="button" name="button">How to Apply</button></a>
+      </div> -->
+
+
+    </div>
+
+
+    <div class="clearfix bg-alternate py4">
+      <div class="container py2 sm-mb4">
+      <div class="md-col md-col-6 p2 sm-px0">
+        <div class="flex-video widescreen">
+            {{page.get_field('wpcf-video-embed-code')}}
+        </div>
+      </div>
+
+
+      <div class="md-col md-col-6 p2 sm-px4">
+        <h2>{{post.get_field('wpcf-section-two-heading')}}</h2>
+        <hr class="hr-sm-accent ml0 mt2 mb2 sm-mb3">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          {{post.get_field('wpcf-section-two-body-txt')}}
         </p>
       </div>
-      <div class="md-col md-col-6 px2 center">
-        <iframe class="block mx-auto" width="560" height="315" src="https://www.youtube.com/embed/sqqfR4JgMOA?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
-<div class="white clearfix four-tile-grid">
-    <div class="four-tile-grid-item bg-cover bg-center p2 center relative md-col md-col-6" style="background: url('http://unsplash.it/850/800')">
-      <div class="overlay">
-      </div>
 
-    </div>
-    <div class="four-tile-grid-item p2 center md-col md-col-6">
-      <div class="black py2">
-      <h2>BS Music Industry Studies</h2>
-      <button class="btn btn-outline" type="button" name="button">View Degree</button>
+
+<div class="container sm-py2">
+  <div class="px2 py3 sm-py4 sm-mb2" id="careeranchor">
+    <h6 class="txt-md-grey">Employment Opportunities</h6>
+    <hr>
+    <h2 class="h2 mb2">Find your career path.</h2>
+    <div class="clearfix py2 mx-auto">
+
+      {% for post in degree.posts(6, 'career') %}
+      <div class="sm-col sm-col-6 md-col-4 p2 mx-auto">
+        <img class="block py2" src="{{post.thumbnail|resize(100)}}" alt="Career thumbnail" />
+          <h4>{{post.title}}</h4>
+          <p class="txt-light">{{post.content}}</p>
       </div>
-    </div>
-</div>
-<div class="four-tile-grid white clearfix">
-  <div class="four-tile-grid-item p2 center md-col md-col-6">
-    <div class="black py2">
-    <h2>BS Music Industry Studies</h2>
-    <p class="px4 py2">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <button class="btn btn-outline" type="button" name="button">View Degree</button>
+      {% endfor %}
     </div>
   </div>
-    <div class="four-tile-grid-item bg-cover bg-center p2 center relative md-col md-col-6" style="background: url('http://unsplash.it/860/800')">
-      <div class="overlay">
-      </div>
 
+  <div class="px2 py3 sm-py2 sm-mb2" id="studentworkanchor">
+    <div class="right-align">
+      <h6 class="txt-md-grey">Featured Students</h6>
+      <hr>
+      <h2 class="h2 mb2">Our students, your future peers.</h2>
     </div>
+    <div class="clearfix py2 mx-auto">
+
+      {% for post in degree.posts(3, 'student-artist') %}
+      <div class="sm-col sm-col-6 md-col-4 px1 mx-auto">
+        <div class=" rounded p2">
+
+        <div class="" style="background: url('{{post.thumbnail}}') center; background-size: cover; height: 200px;">
+
+        </div>
+          <h4>{{post.title}}</h4>
+          <p class="txt-light">{{post.content}}</p>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
 </div>
 
-<div class="container center p4">
-  <h2 class="h2 mb4">Apply to the program to start your future</h2>
-  <button class="btn btn-outline caps" type="button" name="button">Apply now</button>
+  <div class="bg-alternate py2 sm-py4" id="degreeguideanchor">
+    <div class="container">
+      <div class="py2 px3 relative">
+        <h1 class="h1 mb2">Degree Guide</h1>
+        <hr class="hr-sm-accent ml0 mb2">
+        <h4 class="txt-dark-grey mb3">A look into your next four years.</h4>
+        <div class="absolute right-0 top-0 py4 px3 sm-hide">
+        <div class="open-close-button">
+        </div>
+        </div>
+      </div>
+
+      <div class="mx-auto sm-py2 mb4" style="background: #fefefe; border-radius: 3px;">
+        <div class="mx-auto clearfix degree-guide-wrapper">
+        {% include 'partials/degree-guide.twig' %}
+        </div>
+      </div>
+
+  </div>
+</div>
+
+<div class="container px2 sm-px0">
+  <div class=" sm-mb2 py3">
+    <h2 class="h2 mb2">Get started today.</h2>
+    <a class="mb2 inline-block" href="https://admissions.loyno.edu/register/inquiryform" target="_blank"><button class="mb2 block btn btn-accent btn-outline" type="button" name="button">Request Information</button></a>
+    <a class="mb2 inline-block sm-px1" href="/how-to-apply"><button class="block btn btn-accent btn-outline" type="button" name="button">Apply Now</button></a>
+  </div>
+  </div>
 </div>
 
   </article>

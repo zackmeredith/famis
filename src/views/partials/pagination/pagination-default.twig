@@ -1,29 +1,33 @@
 {# View :: Partial :: Pagination - Default #}
 
 <nav class="center">
-  <ul class="pagination">
-    {% if pagination.prev %}
-      <li class="inline-block">
-        <a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">
-          <span aria-hidden="true">&laquo;</span><span class="srt">Previous</span>
-        </a>
-      </li>
-    {% endif %}
+  <ul class="pagination list-reset">
     {% for page in pagination.pages %}
       <li class="{{page.class}} inline-block">
         {% if page.link %}
-          <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+          <a href="{{page.link}}" class="{{page.class}} link-light-grey">{{page.title}}</a>
           {% else %}
           <span class="{{page.class}}">{{page.title}}</span>
         {% endif %}
       </li>
     {% endfor %}
-    {% if pagination.next %}
+
+    <div class="block p1">
+
+    {% if pagination.prev %}
       <li class="inline-block">
-        <a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">
-          <span aria-hidden="true">&raquo;</span><span class="srt">Next</span>
+        <a href="{{pagination.prev.link}}" class="prev link-light-grey {{pagination.prev.link|length ? '' : 'invisible'}}">
+          <span class="srt" aria-hidden="true">&laquo;</span><span class="btn btn-outline">Previous</span>
         </a>
       </li>
     {% endif %}
+    {% if pagination.next %}
+      <li class="inline-block">
+        <a href="{{pagination.next.link}}" class="next link-light-grey {{pagination.next.link|length ? '' : 'invisible'}}">
+          <span class="srt" aria-hidden="true">&raquo;</span><span class="btn btn-outline">Next</span>
+        </a>
+      </li>
+    {% endif %}
+    </div>
   </ul>
 </nav>

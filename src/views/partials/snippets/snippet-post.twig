@@ -1,32 +1,47 @@
 {# View :: Partial :: Snippet - Post #}
 
-{% extends "snippet-base.twig" %}
+<article class="sm-py2 snippet snippet-{{post.post_type}}" id="snippet-{{post.ID}}" style="height: 300px;" role="article" itemscope itemtype="http://schema.org/Article">
+  {% block content %}
 
-{% block content %}
+    {# Thumbnail #}
+    {% if post.get_thumbnail %}
+    <a href="{{post.link}}" itemprop="url">
+      <div class="relative" style="background: url('{{post.thumbnail.src|resize(420, 300)}}') center; background-size: cover; height: 200px; width: 100%;">
+        <!-- <div class="absolute bottom-0 right-0 table accent-fill white">
+          <div class="align-middle table-cell px2">
+            <h5>
+          {{post.category}}
+        </h5>
+          </div>
+        </div> -->
+      </div>
+    </a>
+      <meta itemprop="thumbnailUrl" content="{{post.thumbnail.src}}">
+    {% endif %}
 
-  {# Header #}
-  <header>
-    <h2 class="" itemprop="headline">
-      <a class="black" href="{{post.link}}" itemprop="url">
-        {{post.title}}
-      </a>
-    </h2>
-  </header>
+    {# Header #}
+    <header class="m0">
+      <h5 class="accent-color">
+        {{post.category}}
+      </h5>
+      <h4 class="m0" itemprop="headline">
+        <a class="black" href="{{post.link}}" itemprop="url" title="{{post.title}}">
+          {{post.title}}
+        </a>
+      </h4>
+    </header>
 
-  {# Author / Date #}
-  {% include "partials/post/post-meta.twig" %}
+      {# Author / Date #}
+      <!-- {% include "partials/post/post-meta.twig" %} -->
 
-  {# Thumbnail #}
-  {% if post.get_thumbnail %}
-    <img src="{{post.thumbnail.src}}" itemprop="image" />
-    <meta itemprop="thumbnailUrl" content="{{post.thumbnail.src}}">
-  {% endif %}
+    <!-- {# Content #}
+    <div itemprop="articleBody">
+      <p>
+        {{post.get_preview(50, false, "")}}
+      </p>
+    </div> -->
 
-  {# Content #}
-  <div itemprop="articleBody">
-    <p>
-      {{post.get_preview(50, false, "Read More")}}
-    </p>
-  </div>
+    <!-- <a class="mt2 block black" href="{{post.link}}"><button class="btn btn-outline" type="button" name="button">Read More</button></a> -->
 
-{% endblock %}
+  {% endblock %}
+</article>

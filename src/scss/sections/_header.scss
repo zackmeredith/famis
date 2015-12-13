@@ -2,7 +2,7 @@
 // logo
 /////////////////////////////
 .logo {
-
+line-height: 1;
 
 
   &-text {
@@ -18,13 +18,6 @@
 
   }
 
-  &-link {
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
 }
 
 
@@ -33,7 +26,7 @@
   &-content {
 
     @media (min-width: 40em) {
-      padding: 4rem 2rem;
+      // padding: 4rem 2rem;
     }
 
     &-title {
@@ -62,12 +55,42 @@
 }
 
 .page-header {
-  background: #eee;
-  height: 30vh;
+  height: auto;
   width: 100%;
+  height: 35vh;
+
+  &-hero {
+  height: 45vh;
+  }
+
+  @media (min-width: 64em) {
+    height: 35vh;
+    &-hero {
+    height: 60vh;
+    }
+  }
+
+  &-title {
+    font-size: 2rem;
+
+    @media (min-width: 64em) {
+      font-size: 3rem;
+    }
+
+  }
+
+  &-no-img {
+    border-top: 1px solid #efefef;
+  }
+
+}
+
+.single-faculty-member {
+  .page-header {  display: none; }
+
 }
 
 .nav-header {
-  height: 10vh;
+  min-height: 10vh;
   width: 100%;
 }

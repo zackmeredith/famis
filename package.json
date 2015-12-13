@@ -33,7 +33,7 @@
     "gulp-postcss": "^6.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-rucksack": "^0.1.2",
-    "gulp-sass": "^2.0.4",
+    "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.4",
@@ -43,6 +43,6 @@
   },
   "dependencies": {
     "basscss-responsive-white-space": "^0.1.0",
-    "geomicons-open": "^2.0.0"
+    "jump.js": "^0.1.3"
   }
 }

@@ -1,83 +1,78 @@
 {# View :: Partial :: Navigation #}
 
-<!-- <div class="relative nav-header"> -->
-
-
 {% block header %}
-<div class="nav-bar flex flex-center flex-justify px1 sm-px3">
+<div class="nav-bar flex flex-center flex-justify">
 
-    <div class="logo hover-bar relative" role="banner">
-      <a class="logo-link" href="/" rel="home">
-        <h2 class="logo-text-main m0">LOYOLA</h2>
-        <span class="logo-text-sub block">FAMIS</span>
-      </a>
-    </div>
+  <div class="logo hover-bar relative ml2 sm-ml3" role="banner">
+    <a class="logo-link link-reset" href="/" rel="home">
+      <h2 class="logo-text-main m0 srt">LOYOLA University New Orleans</h2>
+      <span class="logo-text-sub block srt">Film & Music Industry Studies</span>
+      <img alt="Loyola Univerisity New Orleans Film & Music Industry Studies Logo" src="{{(bloginfo('stylesheet_directory')~'/img/famis-logo.svg')}}"/>
+    </a>
+  </div>
 
-
-
-    <div class="nav-main-wrapper flex flex-center">
-    <nav id="nav-main" class="nav-main" role="navigation">
-      <ul class="nav-list list-reset mb0">
+  <div class="nav-main-wrapper flex flex-center">
+    <nav class="nav-main mt2 sm-mt0" id="nav-main" role="navigation">
+      <ul class="nav-list list-reset mb0 sm-mr2 py2">
 
         {% for item in primary_menu.get_items %}
-          <li class="nav-list-item list-reset inline-block {{item.classes | join(' ')}}">
+        <li class="nav-list-item list-reset inline-block py1 sm-py0 {{item.classes | join(' ')}}">
+
+          <a class="nav-list-item-link black accent-hover py2 sm-py4 px1 sm-px2 align-middle" href="{{item.get_link}}">{{item.title}}</a>
 
 
+          {% if item.get_children %}
+          <span class="nav-drop-button">
+            <svg class="nav-drop-button-icon" fill="currentcolor" height="8" id="triangleDown" viewBox="0 0 32 32" width="8" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 8 H28 L16 26 z"></path>
+            </svg>
+          </span>
+          <!-- <i class="arrow arrow-up bottom-0 mx-auto sm-show"></i> -->
+          <ul class="nav-list nav-drop list-reset mb0 mt1 sm-mt0 relative">
 
-            <a class="nav-list-item-link p1" href="{{item.get_link}}">{{item.title}}</a>
+            <div class="clearfix sm-mt3 py1">
+              {% for child in item.get_children %}
 
+              <li class="list-reset block sm-ml0 md-col md-col-6 py2 sm-px3 md-px4">
 
+                <a class="nav-drop-link black px2 sm-p0 hover relative logo-link link-reset" href="{{child.get_link}}">
+                  <span class="accent-hover">{{child.title}}</span>
+                </a>
+                <hr class="lg-show">
+              </li>
 
-            {% if item.get_children %}
-            <span class="p1 nav-drop-button">
-              <svg id="triangleDown" class="nav-drop-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="currentcolor">
-                <path d="M4 8 H28 L16 26 z"></path>
-              </svg>
-            </span>
+              {% endfor %}
+            </div>
+          </ul>
 
+          {% endif %}
 
-              <ul class="nav-list nav-drop list-reset">
-
-                {% for child in item.get_children %}
-                  <li class="nav-drop-item nav-list-item list-reset hover-bar-nav-main inline-block">
-
-                    <a class="nav-drop-link" href="{{child.get_link}}">{{child.title}}</a>
-
-
-                  </li>
-                {% endfor %}
-
-              </ul>
-
-
-            {% endif %}
-
-
-
-
-          </li>
+        </li>
+        <hr class="lg-hide">
         {% endfor %}
 
-
+        <li class="nav-list-item center list-reset inline-block mt3 sm-mt0">
+          <a href="/how-to-apply">
+            <button class="btn btn-outline btn-outline-round btn-accent" name="button" type="button">How to Apply</button>
+          </a>
+        </li>
       </ul>
 
-
-
     </nav>
-    <div class="wp_search nav-main-search">
-      <form role="search" method="get" id="searchform" class="searchform" action="/">
+
+    <div class="wp_search nav-main-search sm-mr3">
+      <form action="/" class="searchform" id="searchform" method="get" role="search">
         <label class="srt" for="s">Search</label>
         <div class="wp_search__field search-field">
-          <input type="search search-field-input" class="wp_search__input" name="s" placeholder="Search">
+          <input class="wp_search__input nav-main-search-input" name="s" placeholder="Search" style="background: url('{{(bloginfo('stylesheet_directory')~'/img/search-icon-2.svg')}}') no-repeat 146px center;" type="search search-field-input">
+          <input type="submit" class="search-submit srt" value="Search">
         </div>
       </form>
     </div>
-
-    </div>
-
-    <div class="menu btn-back mr2">
-      <div class="btn-back-icon"></div>
-    </div>
   </div>
+
+  <div class="menu btn-back mt0 mr2 sm-mr3">
+    <div class="btn-back-icon"></div>
+  </div>
+</div>
 {% endblock %}
-<!-- </div> -->
