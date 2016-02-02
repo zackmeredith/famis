@@ -88,6 +88,7 @@ switchAccordion = function(e) {
 $('.menu').click(function(){
   $(this).toggleClass('open');
   $('.nav-main-wrapper').toggleClass('slide-in-right');
+  $('.header').toggleClass('under');
 });
 
 
@@ -184,6 +185,7 @@ var openclose;
       });
   };
 openclose();
+
 
 });
 

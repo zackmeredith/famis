@@ -6,12 +6,40 @@
 
 {% block content %}
 
+{% if page.get_field('wpcf-has-photo-text-split') and page.get_field('wpcf-has-cards') %}
+<article class="post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+
+  {% include 'partials/photo-text-split.twig'%}
+  {% include 'partials/cards.twig'%}
+
+{% else %}
+
+  {% if page.get_field('wpcf-has-photo-text-split') %}
+
+  <article class="post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+
+    {% include 'partials/photo-text-split.twig'%}
+
+  {% endif %}
+
+  {% if page.get_field('wpcf-has-cards') %}
+
+  <article class="post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+
+    {% include 'partials/cards.twig'%}
+
+  {% endif %}
+
   <article class="post-type-{{page.post_type}} px1 sm-px2 sm-p3 py2" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
 
     {# Content #}
-    <div class="" itemprop="articleBody">
+    <div class="page-content__wrapper mx-auto" itemprop="articleBody">
+
       {{page.content}}
+
+
     </div>
+    {% endif %}
 
   </article>
 

@@ -17,13 +17,32 @@ html{
 body {
   min-height: 100%;
 	position: relative;
+	font-family: 'Open Sans';
+	color: #222;
+	line-height: 1.8;
 }
+
+h1    { font-size: 4rem; }
+h2    { font-size: 2.25rem; }
+h3    { font-size: 1.5rem; }
+h4    { font-size: 1rem; }
+h5    { font-size: 1rem; }
+h6,
+.small { font-size: .85rem; }
 
 .container {
 	max-width: 85em;
+
+	@media screen and (min-width: 100em) {
+		max-width: 95em;
+	}
 }
 
-.link, .nav-list-item-link, .nav-link {
+.page-content__wrapper {
+	max-width: 860px;
+}
+
+.link, .nav-list-item-link, .nav-link, a {
 	&:hover {
 	text-decoration: none;
 }

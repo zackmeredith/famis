@@ -61,15 +61,19 @@
 }
 
 .bg-grey-light {
-  background: #fafafa;
+  background-color: $light-grey;
 }
 
 .bg-alternate {
-  background: #fafafa;
+  background-color: $light-grey;
 }
 
 .bg-white {
-  background: white;
+  background-color: white;
+}
+
+.bg-dark {
+  background-color: $black;
 }
 
 .bg-cover-center {
@@ -77,8 +81,12 @@
   background-position: center;
 }
 
+.black {
+	color: $black;
+}
+
 .txt-light-grey {
-  color: #fafafa;
+  color: $light-grey;
 }
 
 .txt-md-grey {
@@ -181,10 +189,24 @@
 }
 }
 
+.card {
+  box-shadow: 0 1px 1px rgba(50,59,67,0.1);
+  background-color: #fefefe;
+   border-radius: 3px;
+}
+
+.container-small {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hr-sm-accent {
-  width: 100px;
+  width: 104px;
+  height: 4px;
   background-color: $maroon;
 }
+
 
 
 .hr-sm {
@@ -219,4 +241,9 @@
       background: rgba(0,0,0,0.6);
     }
   }
+}
+
+
+.under {
+  z-index: 0;
 }

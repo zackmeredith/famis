@@ -1,0 +1,40 @@
+{# View :: Partial :: Snippet - Post #}
+
+<article class="sm-py2 snippet snippet-{{post.post_type}}" id="snippet-{{post.ID}}" style="min-height: 480px;" role="article" itemscope itemtype="http://schema.org/Article">
+  {% block content %}
+
+    {# Header #}
+    <header class="m0">
+      <h3 class="m0 block" itemprop="headline">
+        <a class="black" href="{{post.link}}" itemprop="url" title="{{post.title}}">
+          {{post.title}}
+        </a>
+      </h3>
+
+
+          <h5 class="txt-md-grey inline-block">
+            {{post.get_field('wpcf-grad-degree')}}
+          </h5>
+
+
+          <h5 class="accent-color inline-block">
+            {{post.get_field('wpcf-grad-year')}}
+          </h5>
+
+
+
+    </header>
+    <p>
+      {{post.content}}
+    </p>
+    <!-- {# Content #}
+    <div itemprop="articleBody">
+      <p>
+        {{post.get_preview(50, false, "")}}
+      </p>
+    </div> -->
+
+    <!-- <a class="mt2 block black" href="{{post.link}}"><button class="btn btn-outline" type="button" name="button">Read More</button></a> -->
+
+  {% endblock %}
+</article>

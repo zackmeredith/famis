@@ -23,9 +23,9 @@
       </h2>
       <h4 class="regular link-light-grey mb3">{{post.get_field('wpcf-job-title')}}</h4>
       <blockquote class="ml0" cite="http://">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <p>{{ post.get_field('wpcf-faculty-quote') }}
         </p>
-        <cite>&nbsp;&nbsp;Some Guy</cite>
+        <cite>&nbsp;&nbsp;{{post.title}}</cite>
       </blockquote>
     </div>
 

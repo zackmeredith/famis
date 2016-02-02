@@ -9,6 +9,9 @@
 
   <body class="{{body_class}} relative">
 
+
+
+
     {% include "partials/navigation.twig" %}
 
     {% block header %}
@@ -21,10 +24,11 @@
       {% block header_title %}
       <div class="table-cell align-middle py4 px2 sm-px4 white relative ">
 
-      <h1 class="page-header-title m0 bottom-0" itemprop="headline">
+      <h1 class="center" itemprop="headline">
         {{page.title}}
       </h1>
-      
+      <hr class="hr-sm bg-white">
+
        <!-- <hr class="hr-sm-accent hr-sm ml0 mb3" style="height: 4px; width: 290px;">
       <p class="lighter" style="letter-spacing: 0.05em;">
         Jesuit values are about more than x. <br>They are a way of x, y, and z.
@@ -40,8 +44,8 @@
 
     {% else %}
     {% block header_no_img %}
-      <header class="page-header-no-img bg-alternate">
-        <div class="px2 sm-px3 py4">
+      <header class="page-header page-header-no-img bg-alternate center table">
+        <div class="px2 table-cell align-middle">
           {% block header_no_img_title %}
           <h1 class="page-header-title m0" itemprop="headline">
             {{page.title}}

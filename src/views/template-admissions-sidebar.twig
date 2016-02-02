@@ -5,12 +5,14 @@
 
 {% block content %}
 
-  <article class="sm-px3 clearfix post-type-{{page.post_type}} sm-py3" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
+  <article class="px2 sm-px3 container clearfix post-type-{{page.post_type}} sm-py3 " id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
 
     {# Content #}
     <div class="md-col md-col-8 py2">
 
-      {% if page.get_field('wpcf-application-accordion') %}
+      {{page.content}}
+
+      {% if page.get_field('wpcf-has-application-accordion') %}
       <!-- <h2 class="mt0">Step One: <span>Apply to Loyola University New Orleans</span></h2>
       <ul class="accordion-list list-reset py1">
         <li class="accordion-list-item">
@@ -78,6 +80,11 @@
                 {{page.get_field('wpcf-accordion-tab-2')}}
               </div>
               </dd>
+              </dl>
+              <dl>
+
+
+
               <h2>Step Two: APPLY TO FAMIS</h2>
               <dt>
                 <a href="#accordion3" aria-expanded="false" aria-controls="accordion3" class="accordion-title accordionTitle js-accordionTrigger">
@@ -90,26 +97,37 @@
               </div>
               </dd>
               <dt>
-                <a href="#accordion3" aria-expanded="false" aria-controls="accordion3" class="accordion-title accordionTitle js-accordionTrigger">
-                  {{page.get_field('wpcf-accordion-tab-3-title')}}
+                <a href="#accordion4" aria-expanded="false" aria-controls="accordion4" class="accordion-title accordionTitle js-accordionTrigger">
+                  {{page.get_field('wpcf-accordion-tab-4-title')}}
                 </a>
               </dt>
-              <dd class="accordion-content accordionItem is-collapsed" style="overflow-y: scroll;"  id="accordion3" aria-hidden="true">
+              <dd class="accordion-content accordionItem is-collapsed" style="overflow-y: scroll;"  id="accordion4" aria-hidden="true">
                 <div class="accordion__panel-content">
-                {{page.get_field('wpcf-accordion-tab-3')}}
+                {{page.get_field('wpcf-accordion-tab-4')}}
               </div>
               </dd>
               <dt>
-                <a href="#accordion3" aria-expanded="false" aria-controls="accordion3" class="accordion-title accordionTitle js-accordionTrigger">
-                  {{page.get_field('wpcf-accordion-tab-3-title')}}
+                <a href="#accordion5" aria-expanded="false" aria-controls="accordion5" class="accordion-title accordionTitle js-accordionTrigger">
+                  {{page.get_field('wpcf-accordion-tab-5-title')}}
                 </a>
               </dt>
-              <dd class="accordion-content accordionItem is-collapsed" style="overflow-y: scroll;"  id="accordion3" aria-hidden="true">
+              <dd class="accordion-content accordionItem is-collapsed" style="overflow-y: scroll;"  id="accordion5" aria-hidden="true">
                 <div class="accordion__panel-content">
-                {{page.get_field('wpcf-accordion-tab-3')}}
+                {{page.get_field('wpcf-accordion-tab-5')}}
               </div>
               </dd>
-            </dl>
+
+              <dt>
+                <a href="#accordion6" aria-expanded="false" aria-controls="accordion6" class="accordion-title accordionTitle js-accordionTrigger">
+                  {{page.get_field('wpcf-accordion-tab-6-title')}}
+                </a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" style="overflow-y: scroll;"  id="accordion6" aria-hidden="true">
+                <div class="accordion__panel-content">
+                {{page.get_field('wpcf-accordion-tab-6')}}
+              </div>
+              </dd>
+              </dl>
 
           </div>
 

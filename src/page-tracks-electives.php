@@ -28,7 +28,7 @@ query_posts( $courseargs );
 $data['commercial_music']     = new TimberTerm('commercial-music');
 $data['creative_writing']     = new TimberTerm('creative-writing');
 $data['digital_filmmaking']   = new TimberTerm('digital-filmmaking');
-$data['film_studies']         = new TimberTerm('film-studies');
+$data['film_studies']         = new TimberTerm('3295');
 $data['screenwriting']        = new TimberTerm('screenwriting');
 
 // Crafts & Skills

@@ -10,7 +10,7 @@
           <div class="sm-col sm-col-8">
 
             <div class="flex-video widescreen">
-              {{post.get_field('wpcf-video-embed-code')}}
+              <iframe id="player{{post.ID}}" class="ytplayer" width="640" height="360" frameborder="0" src="//www.youtube.com/embed/{{post.get_field('wpcf-video-embed-code')}}?enablejsapi=1&list=PLLk3YXa-342emX1rDW33yzg94nVTcYjCv"></iframe>
             </div>
 
 
