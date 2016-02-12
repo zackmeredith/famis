@@ -14,9 +14,11 @@
      'paged' => $paged
  );
 
-$templates = array('archive.twig', 'index.twig');
+$templates = array('page-discover.twig', 'index.twig');
 
 $data = Timber::get_context();
+$page = new TimberPost();
+$data['page'] = $page;
 $data['pagination'] = Timber::get_pagination();
 query_posts($args);
 
@@ -39,5 +41,6 @@ if (is_day()){
 }
 
 $data['posts'] = Timber::get_posts($args);
+$data['categories'] = Timber::get_terms('category');
 
 Timber::render($templates, $data);

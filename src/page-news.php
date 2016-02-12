@@ -29,5 +29,6 @@ $data['page'] = $page;
 $data['posts'] = Timber::get_posts();
 $data['posts'] = $posts;
 $data['pagination'] = Timber::get_pagination();
+$data['categories'] = Timber::get_terms('category');
 
 Timber::render( 'page-news.twig', $data );

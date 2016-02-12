@@ -2,7 +2,11 @@
 // logo
 /////////////////////////////
 .logo {
-line-height: 1;
+  line-height: 1;
+
+  @media (min-width: 40em) {
+
+  }
 
 }
 
@@ -46,23 +50,23 @@ line-height: 1;
 .page-header {
   height: auto;
   width: 100%;
-  height: 30vh;
+  height: 35vh;
 
   &-hero {
-  height: 50vh;
+  height: 55vh;
   }
 
   @media (min-width: 64em) {
-    height: 30vh;
+    height: 40vh;
     &-hero {
-    height: 55vh;
+    height: 50vh;
     }
   }
 
   @media (min-width: 100em) {
 
     &-hero {
-    height: 60vh;
+    height: 55vh;
     }
   }
 
@@ -77,6 +81,7 @@ line-height: 1;
 
   &-no-img {
     border-top: 1px solid #efefef;
+
   }
 
 }

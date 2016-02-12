@@ -9,20 +9,28 @@
       <div class="relative" style="background: url('{{post.thumbnail.src|resize(420, 300)}}') center; background-size: cover; height: 200px; width: 100%;">
         <!-- <div class="absolute bottom-0 right-0 table accent-fill white">
           <div class="align-middle table-cell px2">
-            <h5>
+            <h5>-->
+            {% else %}
+
+            <div class="relative" style="background: url('http://unsplash.it/620/300') center; background-size: cover; height: 200px; width: 100%;">
+
+            {% endif %}
+
+            <!-- <h5>
           {{post.category}}
-        </h5>
-          </div>
-        </div> -->
+        </h5> -->
       </div>
     </a>
       <meta itemprop="thumbnailUrl" content="{{post.thumbnail.src}}">
-    {% endif %}
+
+
 
     {# Header #}
     <header class="m0">
-      <h5 class="accent-color">
+      <h5>
+        <a class="accent-color" href="{{post.category.link}}" itemprop="url">
         {{post.category}}
+        </a>
       </h5>
       <h4 class="m0" itemprop="headline">
         <a class="black" href="{{post.link}}" itemprop="url" title="{{post.title}}">

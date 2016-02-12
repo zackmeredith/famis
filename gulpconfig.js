@@ -30,7 +30,9 @@ module.exports = {
   , notify: false // In-line notifications (the blocks of text saying whether you are connected to the BrowserSync server or not)
   , open: false // Set to false if you don't like the browser window opening automatically
   , port: 9000 // Port number for the live version of the site; default: 3000
-  , proxy: 'wp:8888' // Using a proxy instead of the built-in server as we have server-side rendering to do via WordPress
+  , proxy: 'famis:8888' // Using a proxy instead of the built-in server as we have server-side rendering to do via WordPress
+  , online: true
+  , tunnel: true
   , ghostMode: {
           scroll: true
         }

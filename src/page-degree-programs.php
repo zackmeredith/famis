@@ -19,5 +19,6 @@ $page = new TimberPost();
 $data['page'] = $page;
 $post = Timber::get_posts( $degargs );
 $data['post'] = $post;
+$data['categories'] = Timber::get_terms('category');
 
 Timber::render('page-degree-programs.twig', $data);

@@ -74,6 +74,7 @@
 
 .bg-dark {
   background-color: $black;
+  background-image: linear-gradient(-90deg,#1d232a 0,#181d26 100%);
 }
 
 .bg-cover-center {
@@ -196,13 +197,14 @@
 }
 
 .container-small {
-  max-width: 960px;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
 }
 
+
 .hr-sm-accent {
-  width: 104px;
+  width: 80px;
   height: 4px;
   background-color: $maroon;
 }
@@ -246,4 +248,10 @@
 
 .under {
   z-index: 0;
+}
+
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

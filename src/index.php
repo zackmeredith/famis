@@ -19,9 +19,6 @@ $args = array(
     'posts_per_page' => 12,
     'paged' => $paged
 );
-/* THIS LINE IS CRUCIAL */
-/* in order for WordPress to know what to paginate */
-/* your args have to be the defualt query */
 
 
 $data = Timber::get_context();
@@ -31,7 +28,13 @@ $data['news_sidebar'] = Timber::get_widgets('news_sidebar');
 $data['main_feat_post'] = new TimberTerm('main-featured-post');
 $data['secondary_feat_post'] = new TimberTerm('secondary-featured-post');
 $data['forum'] = new TimberTerm('forum');
+$data['categories'] = Timber::get_terms('category');
+
+/* THIS LINE IS CRUCIAL */
+/* in order for WordPress to know what to paginate */
+/* your args have to be the defualt query */
 query_posts($args);
+
 $data['pagination'] = Timber::get_pagination();
 $data['posts'] = Timber::get_posts($args);
 

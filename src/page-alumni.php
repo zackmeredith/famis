@@ -31,6 +31,7 @@ $data['secondary_feat_alumni'] = new TimberTerm('secondary-feat-alumni');
 query_posts($args);
 $data['pagination'] = Timber::get_pagination();
 $data['posts'] = Timber::get_posts($args);
+$data['categories'] = Timber::get_terms('category');
 
 
 

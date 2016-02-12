@@ -1,8 +1,9 @@
 <?php
 
-$context = Timber::get_context();
+$data = Timber::get_context();
 $args = 'post_type=post';
-$context['news'] = Timber::get_posts($args);
+$data['news'] = Timber::get_posts($args);
 $page = new TimberPost();
-$context['page'] = $page;
-Timber::render( 'front-page.twig', $context );
+$data['page'] = $page;
+$data['categories'] = Timber::get_terms('category');
+Timber::render( 'front-page.twig', $data );

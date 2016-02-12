@@ -34,6 +34,7 @@ $data['forum'] = new TimberTerm('forum');
 query_posts($args);
 $data['pagination'] = Timber::get_pagination();
 $data['posts'] = Timber::get_posts($args);
+$data['categories'] = Timber::get_terms('category');
 
 
 

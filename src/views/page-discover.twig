@@ -1,0 +1,42 @@
+{# View :: Index #}
+
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="clearfix">
+  <div class="bg-alternate flex flex-center-center" style="height: 10vh;">
+    <form action="/" class="searchform px2 inline-block" id="searchform" method="get" role="search">
+      <label class="srt" for="s">Search</label>
+      <div class="wp_search__field field">
+        <input class="wp_search__input field" name="s" placeholder="Search" style="background: url('{{(bloginfo('stylesheet_directory')~'/img/search-icon-2.svg')}}') no-repeat 146px center;" type="search search-field-input">
+      </div>
+
+
+      <select class="field" name="category_name">
+        <option value="">Categories</option>
+        {% for cat in categories %}
+        <option value="{{cat.name}}">{{cat.name}}</option>
+        {% endfor %}
+      </select>
+
+      <select class="field " name="Select 2">
+        <option value="option">option</option>
+        <option value="option">option</option>
+      </select>
+
+    <button type="submit" class="search-submit btn btn-outline">Search</button>
+
+</form>
+  </div>
+  <div class="clearfix container flex flex-wrap">
+    {% for post in posts %}
+    <div class="news-post sm-col sm-col-6 md-col-4 lg-col-3 p2 mx-auto">
+      {% include ['partials/snippets/snippet-post.twig'] %}
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+  {% include ['partials/pagination.twig'] %}
+
+{% endblock %}
