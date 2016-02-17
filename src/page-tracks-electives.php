@@ -41,6 +41,7 @@ $data['music_technology']     = new TimberTerm('2801');
 $data['production']           = new TimberTerm('2913');
 
 
+$data['tracks'] = new TimberTerm('tracks');
 
   if ( get_post_meta( get_the_ID(), 'wpcf-video-embed-code', true ) ) {
     $data['video'] = get_post_meta( get_the_ID(), 'wpcf-video-embed-code', true );

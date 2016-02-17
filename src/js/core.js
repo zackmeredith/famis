@@ -252,11 +252,6 @@ jQuery(document).ready(function($){
 	// moveNavigation();
 	// $(window).on('resize', checkResize);
 
-	//mobile version - open/close navigation
-	navigationTrigger.on('click', function(event){
-		event.preventDefault();
-		mainHeader.add(navigation).add(pageContent).toggleClass('nav-is-visible');
-	});
 
 	searchTrigger.on('click', function(event){
 		event.preventDefault();

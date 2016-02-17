@@ -13,15 +13,26 @@ if (!isset($paged) || !$paged){
     $paged = 1;
 }
 
+$data = Timber::get_context();
 $args = array(
     'post_type' => 'post',
-    'cat' => '-72',
     'posts_per_page' => 12,
     'paged' => $paged
 );
+$templates = array('index.twig');
+
+if (is_home()){
+  $args = array(
+      'post_type' => 'post',
+      'cat' => '-72',
+      'posts_per_page' => 12,
+      'paged' => $paged
+  );
+  array_unshift($templates, 'page-news.twig');
+}
 
 
-$data = Timber::get_context();
+
 $page = new TimberPost();
 $data['page'] = $page;
 $data['news_sidebar'] = Timber::get_widgets('news_sidebar');
@@ -39,10 +50,7 @@ $data['pagination'] = Timber::get_pagination();
 $data['posts'] = Timber::get_posts($args);
 
 
-$templates = array('index.twig');
 
-if (is_home()){
-  array_unshift($templates, 'page-news.twig');
-}
+
 
 Timber::render($templates, $data);

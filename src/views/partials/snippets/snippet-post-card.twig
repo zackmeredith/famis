@@ -1,12 +1,12 @@
 {# View :: Partial :: Snippet - Post #}
 
-<article class="sm-py2 snippet snippet-{{post.post_type}}" id="snippet-{{post.ID}}" style="height: 300px;" role="article" itemscope itemtype="http://schema.org/Article">
+<article class="card snippet snippet-{{post.post_type}}" id="snippet-{{post.ID}}" style="height: 240px;" role="article" itemscope itemtype="http://schema.org/Article">
   {% block content %}
 
     {# Thumbnail #}
     {% if post.get_thumbnail %}
     <a href="{{post.link}}" itemprop="url">
-      <div class="relative" style="background: url('{{post.thumbnail.src|resize(420, 300)}}') center; background-size: cover; height: 200px; width: 100%;">
+      <div class="relative" style="background: url('{{post.thumbnail.src|resize(420, 300)}}') center; background-size: cover; height: 160px; width: 100%;">
         <!-- <div class="absolute bottom-0 right-0 table accent-fill white">
           <div class="align-middle table-cell px2">
             <h5>-->
@@ -27,11 +27,11 @@
 
     {# Header #}
     <header class="m0">
-      <h6>
+      <h5>
         <a class="accent-color" href="{{post.category.link}}" itemprop="url">
         {{post.category}}
         </a>
-      </h6>
+      </h5>
       <h4 class="m0" itemprop="headline">
         <a class="black" href="{{post.link}}" itemprop="url" title="{{post.title}}">
           {{post.title}}

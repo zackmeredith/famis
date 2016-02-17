@@ -8,17 +8,12 @@
      $paged = 1;
  }
 
- $args = array(
-     'post_type' => 'post',
-     'posts_per_page' => 12,
-     'paged' => $paged
- );
+
 
 $templates = array('archive.twig', 'index.twig');
 
 $data = Timber::get_context();
 $data['pagination'] = Timber::get_pagination();
-query_posts($args);
 
 
 $data['title'] = 'Archive';
@@ -38,6 +33,6 @@ if (is_day()){
   array_unshift($templates, 'archive-'.get_post_type().'.twig');
 }
 
-$data['posts'] = Timber::get_posts($args);
+$data['posts'] = Timber::get_posts();
 
 Timber::render($templates, $data);

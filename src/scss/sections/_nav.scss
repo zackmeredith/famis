@@ -6,6 +6,10 @@
 .nav-bar {
   // background: rgba(#fff, 0.9);
 }
+
+.search-toggle {
+
+}
 .nav-main-wrapper {
   background-color: rgba($black, 1);
   transform: translateX(100%);
@@ -423,10 +427,6 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 select, input[type="search"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
   appearance: none;
   border: none;
 }
@@ -434,6 +434,10 @@ select, input[type="search"] {
 input[type="search"] {
   border-radius: 0;
   margin-top: 0;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 select {
@@ -477,37 +481,32 @@ Patterns - reusable parts of our design
 Header
 
 -------------------------------- */
-.cd-main-header {
+.main-header {
   position: relative;
   z-index: 4;
   height: 64px;
   background-color: white;
   transition: transform 0.3s;
-}
-.cd-main-header.nav-is-visible {
-  transform: translateX(-260px);
-}
-.cd-main-header::before {
-  /* never visible - this is used in jQuery to check the current MQ */
-  display: none;
-  content: 'mobile';
-}
-@media only screen and (min-width: 1024px) {
-  .cd-main-header {
-    height: 80px;
-  }
-  .cd-main-header.nav-is-visible {
-    transform: translateX(0);
-  }
-  .cd-main-header::before {
-    content: 'desktop';
-  }
-}
 
-.cd-main-nav-wrapper::after {
-  clear: both;
-  content: "";
-  display: table;
+  @media only screen and (min-width: 1024px) {
+      // height: 80px;
+
+    &__searchform {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex: 1 1;
+      padding: 0 .5rem;
+      // border-right: 1px solid $md-light-grey;
+
+
+      input[type="search"] {
+        flex: 1 1 600px;
+      }
+    }
+
+  }
+
 }
 
 .cd-main-nav input[type="search"] {
@@ -859,24 +858,10 @@ Search Form
   }
   .animate-search .is-visible .cd-search-suggestions {
     /* trigger the dropdown animation if <header> has the .animate-search class */
-    -webkit-transform-origin: center top;
-    -moz-transform-origin: center top;
-    -ms-transform-origin: center top;
-    -o-transform-origin: center top;
     transform-origin: center top;
     /* Force Hardware Acceleration */
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    -webkit-animation: cd-3d-rotation 0.5s 0.3s;
-    -moz-animation: cd-3d-rotation 0.5s 0.3s;
     animation: cd-3d-rotation 0.5s 0.3s;
-    -webkit-animation-fill-mode: backwards;
-    -moz-animation-fill-mode: backwards;
     animation-fill-mode: backwards;
     opacity: 1;
   }
@@ -896,7 +881,7 @@ Search Form
 }
 @media only screen and (min-width: 1024px) {
   .cd-search-trigger {
-    background-color: $black;
+    // background-color: $black;
     border-radius: 50%;
     display: block;
     position: relative;
@@ -905,8 +890,6 @@ Search Form
     width: 40px;
     margin: 1.25em .5em;
     float: right;
-    -webkit-transition: -webkit-transform 0.3s;
-    -moz-transition: -moz-transform 0.3s;
     transition: transform 0.3s;
   }
   .cd-search-trigger::after, .cd-search-trigger:before {
@@ -933,12 +916,8 @@ Search Form
     transform: translateX(-50%) translateY(-50%) scale(0);
     height: 100%;
     width: 100%;
-    background-color: $md-grey;
     border-radius: 50%;
     transition: transform 0.3s;
-  }
-  .no-touch .cd-search-trigger:hover::before {
-    background-color: $md-grey;
   }
   .cd-search-trigger.search-form-visible {
     transform: translateX(-64px);

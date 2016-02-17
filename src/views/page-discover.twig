@@ -5,9 +5,9 @@
 {% block content %}
 <div class="clearfix">
   <div class="bg-alternate flex flex-center-center" style="height: 10vh;">
-    <form action="/" class="searchform px2 inline-block" id="searchform" method="get" role="search">
+    <form action="/" class="searchform flex px2" id="searchform" method="get" role="search" style="justify-content: space-around; flex-basis: 800px;">
       <label class="srt" for="s">Search</label>
-      <div class="wp_search__field field">
+      <div class="wp_search__field">
         <input class="wp_search__input field" name="s" placeholder="Search" style="background: url('{{(bloginfo('stylesheet_directory')~'/img/search-icon-2.svg')}}') no-repeat 146px center;" type="search search-field-input">
       </div>
 
@@ -19,10 +19,27 @@
         {% endfor %}
       </select>
 
-      <select class="field " name="Select 2">
-        <option value="option">option</option>
-        <option value="option">option</option>
-      </select>
+
+
+      <select name="cat" id="cat" class="postform">
+      {% for cat in categories %}
+      <option value="{{cat.name}}">{{cat.name}}</option>
+      {% endfor %}
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+var dropdown = document.getElementById( "cat" );
+function onCatChange() {
+if ( dropdown.options.length > 0 ) {
+location.href = "http://localhost:9000/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+}
+}
+dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
 
     <button type="submit" class="search-submit btn btn-outline">Search</button>
 

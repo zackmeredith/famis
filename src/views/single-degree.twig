@@ -10,11 +10,11 @@
 
   <h2 class="page-header-title mt1" style="letter-spacing: 0.02em;">{{post.get_field('wpcf-degree-title-no-type')}}</h2>
   <hr class="mb3" style="background: white; width: 300px;">
-  <a class="py2" href="https://admissions.loyno.edu/apply/" target="_blank">
+  <!-- <a class="py2" href="https://admissions.loyno.edu/apply/" target="_blank">
     <button class="btn btn-accent-fill btn-round btn-outline-round" type="button" name="button">
       <span class="p3">Apply Now</span>
     </button>
-  </a>
+  </a> -->
 </div>
 {% endblock %}
 
@@ -24,53 +24,53 @@
 
   {# Content #}
 
-  <div class="px2 relative sidebar-menu sm-show ">
-    <ul class="list-reset md-show sidebar-nav inline-block py1 mb0 container center">
-      <li class="py1 px2 inline-block">
-        <a href="/degree-programs" class="secondary-text-link txt-light">
+  <div class="relative border-bottom  sm-hide" style="font-size: 0.875rem; letter-spacing: 0.025em;">
+    <ul class="right-align list-reset md-show py1 mb0 container center uppercase">
+      <!-- <li class="py1 px2 inline-block">
+        <a href="/degree-programs" class="accent-hover">
           <i class="fa fa-chevron-left mr1"></i>All Degrees</a>
+      </li> -->
+      <li class="py1 px2 inline-block">
+        <a class="secondary-text-link" rel="scrolling" href="#degreeguideanchor">Degree Guide</a>
       </li>
       <li class="py1 px2 inline-block">
-        <a class="secondary-text-link txt-light" rel="scrolling" href="#degreeguideanchor">Degree Guide</a>
+        <a class="secondary-text-link" rel="scrolling" href="#careeranchor">Careers</a>
       </li>
       <li class="py1 px2 inline-block">
-        <a class="secondary-text-link txt-light" rel="scrolling" href="#careeranchor">Careers</a>
+        <a class="secondary-text-link" rel="scrolling" href="#studentworkanchor">Student Work</a>
       </li>
       <li class="py1 px2 inline-block">
-        <a class="secondary-text-link txt-light" rel="scrolling" href="#studentworkanchor">Student Work</a>
-      </li>
-      <li class="py1 px2 inline-block">
-        <a class="secondary-text-link txt-light" href="{{page.get_field('wpcf-dpcl-url')}}" target="_blank">DPCL</a>
+        <a class="secondary-text-link" href="{{page.get_field('wpcf-dpcl-url')}}" target="_blank">DPCL</a>
       </li>
     </ul>
   </div>
 
-  <div class="container relative clearfix p2 py3 sm-py4">
+  <div class="relative container clearfix p2 py3 sm-py4">
 
-    <div class="md-col md-col-6 px2 mx-auto">
+    <div class="md-col md-col-6 px2 sm-px3">
       <!-- <blockquote class="ml0" cite="http://"> -->
-        <h3 class="mt0 capitalize">{{page.get_field('wpcf-highlighted-text')}}</h3>
+        <h2 class="mt0 capitalize">{{page.get_field('wpcf-highlighted-text')}}</h2>
         <hr class="hr-sm-accent ml0 mb3">
       <!-- </blockquote> -->
 
       <p class="txt-light-grey mb2">{{page.content}}</p>
 
-      <div class="mt2">
+      <!-- <div class="mt2">
         <h4 class="mb2">Get Started</h4>
         <a class="inline-block" href="https://admissions.loyno.edu/register/inquiryform" target="_blank">
-          <button class="mb2 block btn btn-accent btn-outline" type="button" name="button">Request Information</button>
+          <button class="mb2 block btn btn-accent-fill btn-outline" type="button" name="button">Request Information</button>
         </a>
         <a class="inline-block sm-px1" href="/how-to-apply">
-          <button class="block btn btn-accent btn-outline" type="button" name="button">How to Apply</button>
+          <button class="block btn btn-accent btn-outline" type="button" name="button">How to Apply<i class="fa fa-chevron-right ml1"></i></button>
         </a>
-      </div>
+      </div> -->
 
 
     </div>
 
-    <div class="md-col md-col-6 px2 sm-px4 mx-auto">
+    <div class="md-col md-col-6 px2 sm-px3 mx-auto mt4">
 
-        <!-- <div class="mx-auto" style="height: 300px; background: url({{page.thumbnail}}) center; background-size: cover;"></div>-->
+            <div class="mx-auto" style="height: 400px; background: url({{page.thumbnail}}) center; background-size: cover;"></div>
 
   </div>
   </div>
@@ -90,11 +90,12 @@
       <div class="md-col md-col-6  sm-px3">
 
         <!-- <div class="card"> -->
-
-
         <div class="flex-video widescreen">
           {{page.get_field('wpcf-video-embed-code')}}
         </div>
+
+
+
 
         <!-- </div> -->
       </div>
@@ -115,7 +116,7 @@
         <div class="sm-col sm-col-6 md-col-4 p2 mx-auto">
           <div class="card relative" style="background-color: #F7F7FA;">
 
-            <div class="py2 sm-py4">
+            <div class="py1">
 
 
           <img class="block py2 mx-auto" src="{{post.thumbnail}}" style="height: 160px;" alt="Career thumbnail"/>

@@ -7,8 +7,8 @@
   <article class="post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
 
     {# Content #}
-    <div class="p1 sm-p2" itemprop="articleBody">
-        <div class="clearfix center py2 sm-py4">
+    <div class="p1 sm-p2 container" itemprop="articleBody">
+        <div class="clearfix py2 sm-py4">
       {% for post in posts %}
           {% include ['partials/snippets/snippet-faculty.twig'] %}
       {% endfor %}

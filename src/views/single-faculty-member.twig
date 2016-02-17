@@ -10,7 +10,7 @@
 
 
 {# Header #}
-<header class="bg-alternate">
+<header class="">
   <div class="clearfix container py2 sm-py4">
 
     <div class="sm-col sm-col-4">
@@ -32,13 +32,44 @@
   </div>
 </header>
 
-<article class="post-type-{{post.post_type}} container sm-px4 py2 sm-py4" id="post-{{post.ID}}" role="article" itemscope itemtype="http://schema.org/Article">
+<article class="post-type-{{post.post_type}} bg-alternate" id="post-{{post.ID}}" role="article" itemscope itemtype="http://schema.org/Article">
+
+<div class="container clearfix py2 sm-py4 ">
 
 
 
   {# Content #}
-  <div class="sm-px4" itemprop="articleBody">
+  <div class="sm-px4 sm-col sm-col-8" itemprop="articleBody">
     {{post.content}}
+  </div>
+
+  <div class="sm-col sm-col-4 card">
+    {% if post.get_field('wpcf-video-embed-code') %}
+    <div class="flex-video widescreen">
+      {{post.get_field('wpcf-video-embed-code')}}
+    </div>
+    {% endif %}
+
+    <div class="px2 mb2">
+
+
+    {% if post.get_field('wpcf-faculty-degrees') %}
+    <h5>Degrees</h5>
+    <small class="">
+      {{post.get_field('wpcf-faculty-degrees')}}
+    </small>
+    {% endif %}
+
+    {% if post.get_field('wpcf-courses-taught') %}
+    <h5>Courses Taught</h5>
+    <small class="">
+      {{post.get_field('wpcf-courses-taught')}}
+    </small>
+    {% endif %}
+
+    </div>
+  </div>
+
   </div>
 
 </article>

@@ -4,25 +4,43 @@
 
 
 
-<header class="cd-main-header animate-search flex flex-center flex-justify px1 sm-px3">
+<header class="main-header animate-search flex flex-center flex-justify px1 sm-px3">
   <div class="logo sm-p0 left flex flex-center-center" role="banner">
     <a class="logo-link link-reset hover-bar relative" href="/" rel="home">
       <img class="fill-container" alt="Loyola Univerisity New Orleans Film & Music Industry Studies Logo" src="{{(bloginfo('stylesheet_directory')~'/img/famis-logo.svg')}}"/>
     </a>
   </div>
 
-  <div class="right flex flex-center-center">
+  <span style="height: 16px; width: 16px; background: url({{(bloginfo('stylesheet_directory')~'/img/search-ol.svg')}}) no-repeat center; background-size: contain;" class="ml2 search-toggle"></span>
+
+  <form action="/" class="main-header__searchform" id="searchform" method="get" role="search">
+    <input type="search" placeholder="Search..." class="wp_search__input" name="s">
+
+    <!-- <div class="">
+      <span>in</span>
+      <select class="field" style="height: 2.75rem;" name="category_name">
+        <option value="">Categories</option>
+        {% for cat in categories %}
+        <option value="{{cat.name}}">{{cat.name}}</option>
+        {% endfor %}
+      </select>
+    </div> -->
+    <a href="" class="srt">Search<input type="submit" class="search-submit" value="Search"></a>
+  </form>
+
+
+  <div class="flex flex-center-center">
 
 
 
     <div class="table sm-show">
       <span class="inline-block table-cell align-middle" style="font-size: 0.75rem; ">
         <a href="/how-to-apply">
-          <button class="btn btn-accent-fill uppercase" name="button" type="button">Apply</button>
+          <button class="btn btn-outline btn-outline-round btn-accent uppercase" name="button" type="button">Apply</button>
         </a>
-        <a href="https://admissions.loyno.edu/register/inquiryform" target="_blank">
+        <!-- <a href="https://admissions.loyno.edu/register/inquiryform" target="_blank">
           <button class="btn btn-accent-fill uppercase" name="button" type="button">Request Info</button>
-        </a>
+        </a> -->
       </span>
 
     </div>
@@ -47,8 +65,7 @@
         <span class="selected-value">all Categories</span>
       </div>
     </form>
-    <!-- </div> -->
-    <!-- <div class="cd-search-suggestions">
+    <div class="cd-search-suggestions">
       <div class="news">
         <h3>News</h3>
         <ul class="list-reset">
@@ -63,14 +80,8 @@
           {% endfor %}
 
         </ul>
-      </div> -->
-      <!-- .news -->
-
-
-
-    <!-- </div> -->
-    <!-- .cd-search-suggestions -->
-
+      </div>
+    </div>
     <a href="#0" class="close cd-text-replace">Close Form</a>
 
   </div>
@@ -78,7 +89,7 @@
 
 </header>
 
-<div class="cd-cover-layer"></div>
+<!-- <div class="cd-cover-layer"></div> -->
 <!-- cover main content when search form is open -->
 
 <nav class="nav-main relative" id="nav-main" role="navigation">
@@ -121,6 +132,7 @@
         <a class="nav-list-item-link black accent-hover py2 px1 sm-px2" href="{{item.get_link}}">{{item.title}}</a>
 
         {% if item.get_children %}
+
         <span class="nav-drop-button">
           <svg class="nav-drop-button-icon align-middle" fill="currentcolor" height="8" id="triangleDown" viewBox="0 0 32 32" width="8" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 8 H28 L16 26 z"></path>
@@ -130,7 +142,7 @@
         <div class="nav-drop flex flex-center">
 
           <div class="clearfix width-100">
-            <div class="md-col md-col-8">
+            <div class="md-col md-col-12">
 
 
 

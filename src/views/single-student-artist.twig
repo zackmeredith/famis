@@ -1,4 +1,4 @@
-{# View :: Single #}
+{# View :: Single student-artist #}
 
 {% extends "base.twig" %}
 
@@ -20,15 +20,10 @@
     {# Header #}
     <div class="container-small py2 sm-py3">
 
-      <div class="py2">
-        {% include "partials/category.twig" %}
-      </div>
+
       <h2 itemprop="headline" class="mt0">
         {{post.title}}
       </h2>
-
-      {# Author / Date #}
-      {% include "partials/post/post-meta.twig" %}
 
 
       </div>
@@ -44,9 +39,6 @@
       {% endif %}
 
       {{post.content}}
-
-
-      {% include "partials/tags.twig" %}
 
     </div>
 

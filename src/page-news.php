@@ -14,6 +14,7 @@ if (!isset($paged) || !$paged){
 
 $args = array(
     'post_type' => 'post',
+		'cat' => -72,
     'posts_per_page' => 12,
     'paged' => $paged
 );
@@ -24,10 +25,11 @@ query_posts($args);
 
 $data = Timber::get_context();
 $data['news_sidebar'] = Timber::get_widgets('news_sidebar');
-$page = new TimberPost();
-$data['page'] = $page;
+
 $data['posts'] = Timber::get_posts();
 $data['posts'] = $posts;
+$page = new TimberPost();
+$data['page'] = $page;
 $data['pagination'] = Timber::get_pagination();
 $data['categories'] = Timber::get_terms('category');
 
