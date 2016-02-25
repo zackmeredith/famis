@@ -2,6 +2,6 @@
 
 {% if post.terms('category')%}
   {% for cat in post.terms('category') %}
-    <a class="btn btn-outline btn-grey" href="{{cat.link}}" itemprop="articleSection">{{cat.name}}</a>
+    <a class="btn btn-accent-fill" href="{{cat.link}}" itemprop="articleSection">{{cat.name}}</a>
   {% endfor %}
 {% endif %}

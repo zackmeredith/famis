@@ -29,7 +29,7 @@
 
   &-item {
     height: 300px;
-    height: 20rem;
+    min-height: 20rem;
 
     &:hover {
 
@@ -43,6 +43,7 @@
 }
 
 .degree-block {
+
 
   &-content-wrapper {
     border: 0px solid #fff;
@@ -90,10 +91,10 @@
 
 
 .degree-guide-semester {
-  min-height: 550px;
+  min-height: 420px;
 
   @media screen and (min-width: 70em) {
-    min-height: auto;
+    // min-height: auto;
   }
 }
 
@@ -182,7 +183,7 @@
 
 .secondary-feat-post {
   height: 50%;
-  width: 100%;
+  // width: 100%;
 }
 
 .feat-fill {
@@ -464,7 +465,7 @@
 
   @media screen and (min-width: 52em) {
     text-align: left;
-    background: none;
+    // background: none;
   }
 }
 
@@ -542,59 +543,6 @@ blockquote cite::before {
 
 
 
-
-
-
-
-
-    $color: #C9353B;
-    $contrast: lighten($color, 40%);
-    $transition-duration: 0.5s;
-
-    .open-close-button {
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-      border: 3px solid $maroon;
-      font-size: 3em;
-      border-radius: 50%;
-      position: relative;
-      transition: $transition-duration;
-      transform: translateZ(0); // Force 3D context.
-
-      &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        background-color: $maroon;
-        width: 80%;
-        height: 6%;;
-        left: 10%;
-        top: 48%;
-      }
-
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        background-color: $maroon;
-        width: 6%;
-        height: 80%;
-        left: 47%;
-        top: 10%;
-      }
-
-      &.open {
-        background-color: $maroon;
-        &:after {
-          background-color: white;
-        }
-        &:before {
-          background-color: white;
-        }
-        transform: rotate(225deg);
-      }
-    }
 
 
 

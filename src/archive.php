@@ -3,10 +3,18 @@
  * Template :: Archive
  */
 
+ global $paged;
+ if (!isset($paged) || !$paged){
+     $paged = 1;
+ }
+
+
+
 $templates = array('archive.twig', 'index.twig');
 
 $data = Timber::get_context();
 $data['pagination'] = Timber::get_pagination();
+
 
 $data['title'] = 'Archive';
 if (is_day()){

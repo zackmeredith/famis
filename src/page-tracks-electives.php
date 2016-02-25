@@ -11,6 +11,7 @@ $page = new TimberPost();
 $data['page'] = $page;
 $post = Timber::get_post();
 $data['post'] = $post;
+$data['categories'] = Timber::get_terms('category');
 
 $courseargs = array(
 		'post_type'      => 'course',
@@ -40,6 +41,7 @@ $data['music_technology']     = new TimberTerm('2801');
 $data['production']           = new TimberTerm('2913');
 
 
+$data['tracks'] = new TimberTerm('tracks');
 
   if ( get_post_meta( get_the_ID(), 'wpcf-video-embed-code', true ) ) {
     $data['video'] = get_post_meta( get_the_ID(), 'wpcf-video-embed-code', true );

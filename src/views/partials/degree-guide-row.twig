@@ -27,7 +27,7 @@
             <h2 class="mt0">{{post.title}}</h2>
             <h4 class="link-light-grey regular mb2">{{post.get_field('wpcf-course-number')}}</h4>
             {% if post.get_field('wpcf-syllabus-url') %}
-                <a class="inline-block" href="{{post.get_field('wpcf-syllabus-url')}}"><button class="btn btn-outline btn-accent-fill btn-outline-round" type="button" name="button"><span>Syllabus</span></button></a>
+                <a class="inline-block" href="{{post.get_field('wpcf-syllabus-url')}}" target="_blank"><button class="btn btn-outline btn-accent-fill btn-outline-round" type="button" name="button"><span>Syllabus</span></button></a>
               {% endif %}
             {{post.content}}
 

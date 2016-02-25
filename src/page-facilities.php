@@ -16,4 +16,5 @@
  $data['page'] = $page;
  $post = Timber::get_posts( $facargs );
  $data['post'] = $post;
+ $data['categories'] = Timber::get_terms('category');
 Timber::render('page-facilities.twig', $data);

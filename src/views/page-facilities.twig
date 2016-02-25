@@ -9,11 +9,11 @@
   <article class="post-type-{{page.post_type}} px1 sm-px2" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
 
     {# Content #}
-    <div class="clearfix p2" itemprop="articleBody">
+    <div class="clearfix p2 sm-flex flex-wrap" style="justify-content: flex-start;" itemprop="articleBody">
 
       {% for post in posts %}
 
-      <div class="sm-col sm-col-6 md-col-4 sm-px1 py2 mx-auto">
+      <div class="sm-col sm-col-6 md-col-4 sm-px1 py2">
 
         <div class="">
 
@@ -43,7 +43,7 @@
 
         </div>
 
-    </div>
+
 
       {% endfor %}
 

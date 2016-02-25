@@ -15,40 +15,42 @@
 
 {% block content %}
 
-  <article class="post-type-{{post.post_type}} p2 container" style="max-width: 960px;" id="post-{{post.ID}}" role="article" itemscope itemtype="http://schema.org/Article">
-
+  <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}" role="article" itemscope itemtype="http://schema.org/Article">
+  <div class="bg-alternate">
     {# Header #}
+    <div class="container-small py2 sm-py3">
 
-      <h1 itemprop="headline">
+      <div class="py2">
+        {% include "partials/category.twig" %}
+      </div>
+      <h2 itemprop="headline" class="mt0">
         {{post.title}}
-      </h1>
+      </h2>
+
+      {# Author / Date #}
+      {% include "partials/post/post-meta.twig" %}
 
 
-    {# Author / Date #}
-    {% include "partials/post/post-meta.twig" %}
-    <br>
-
-    {% if post.get_field('wpcf-video-embed-code') %}
-    <div class="flex-video widescreen">
-      {{video}}
-    </div>
-    {% endif %}
-
+      </div>
+  </div>
 
     {# Content #}
-    <div itemprop="articleBody">
-      <div class="py2">
+    <div itemprop="articleBody" class="container-small mx-auto py2 sm-py4">
 
+      {% if post.get_field('wpcf-video-embed-code') %}
+      <div class="flex-video widescreen py2 mb2 sm-mb4">
+        {{video}}
+      </div>
+      {% endif %}
 
       {{post.content}}
 
-      </div>
 
+      {% include "partials/tags.twig" %}
 
     </div>
 
-    {% include "partials/category.twig" %}
-    {% include "partials/tags.twig" %}
+
   </article>
 
 {% endblock %}

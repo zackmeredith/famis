@@ -122,41 +122,41 @@
   .btn-back {
       position: absolute;
       z-index: 15;
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
       top: 0;
       right: 0;
       transition-duration: 0.5s;
       cursor: pointer;
-      @media screen and (min-width: 44em) {
+      @media screen and (min-width: 48em) {
           display: none;
       }
       &-icon {
           transition-duration: 0.5s;
           position: absolute;
-          height: 3px;
-          width: 30px;
-          top: 30px;
+          height: 2px;
+          width: 24px;
+          top: 24px;
           background-color: black;
           border-radius: 2px;
           &:before {
               transition-duration: 0.5s;
               position: absolute;
-              width: 30px;
-              height: 3px;
+              width: 24px;
+              height: 2px;
               background-color: black;
               content: "";
-              top: -10px;
+              top: -8px;
               border-radius: 2px;
           }
           &:after {
               transition-duration: 0.5s;
               position: absolute;
-              width: 30px;
-              height: 3px;
+              width: 24px;
+              height: 2px;
               background-color: black;
               content: "";
-              top: 10px;
+              top: 8px;
               border-radius: 2px;
           }
       }
@@ -166,11 +166,11 @@
               background-color: $maroon;
               //transform: translate(-3em);
               &:before {
-                  transform: rotateZ(45deg) scaleX(0.75) translate(10px, -3px);
+                  transform: rotateZ(45deg) scaleX(0.75) translate(8px, -2px);
                   background-color: $maroon;
               }
               &:after {
-                  transform: rotateZ(-45deg) scaleX(0.75) translate(10px, 3px);
+                  transform: rotateZ(-45deg) scaleX(0.75) translate(8px, 2px);
                   background-color: $maroon;
               }
           }

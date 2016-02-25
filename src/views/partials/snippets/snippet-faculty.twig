@@ -1,16 +1,31 @@
 {# View :: Partial :: Snippet - Faculty #}
 
-<article class="snippet snippet-{{post.post_type}} sm-col sm-col-6 md-col-4 lg-col-3 mb4" id="snippet-{{post.ID}}" style="height: 22rem" role="article" itemscope itemtype="http://schema.org/Article">
+<article class="snippet snippet-{{post.post_type}} sm-col sm-col-6 md-col-4 p1" id="snippet-{{post.ID}}" style="" role="article" itemscope itemtype="http://schema.org/Article">
+<div class="">
   {% block content %}
+
+
 
     {# Thumbnail #}
     {% if post.get_thumbnail %}
-    <div class="relative mx-auto" style="width: 90%;">
+    <div class="mx-auto">
       <a class="white" href="{{post.link}}" itemprop="url">
-      <div class="mx-auto" style="background: url('{{post.thumbnail|resize(300, 300)}}') center top; background-size: cover; height: 300px;">
+      <div class="mx-auto relative" style="background-image: linear-gradient(rgba(0,0,0,0) 50%, rgba(0,0,0,0.35) 95%), url('{{post.thumbnail|resize(300, 300)}}'); background-position: center top; background-size: cover; height: 256px;">
+        <span class="mb1 p0 absolute left-0 bottom-0 px2">
+          <h3 class="white mb0" itemprop="headline">
+
+              {{post.title}}
+
+          </h3>
+          <h6 class="white regular mt0">{{post.get_field('wpcf-job-title')}}</h6>
+        </span>
+
+
         <div class="hover-show fill-container">
+
           <div class="overlay"></div>
-            <div class="overlay-container table relative fill-container">
+
+            <div class="overlay-container table center relative fill-container">
               <div class="table-cell align-middle">
 
               <button class="white btn btn-outline" type="button" name="button">Read Full Bio</button>
@@ -18,6 +33,7 @@
             </div>
 
         </div>
+
       </div>
 
       </a>
@@ -26,13 +42,8 @@
     {% endif %}
 
     {# Header #}
-    <header class="m0 mx-auto">
-      <h4 class="mb1 p0" itemprop="headline">
-        <a class="black" href="{{post.link}}" itemprop="url" title="{{post.title}}">
-          {{post.title}}
-        </a>
-      </h4>
-      <h5 class="block m0 mx-auto link-light-grey regular"  style="width: 66%;">{{post.get_field('wpcf-job-title')}}</h5>
+    <header class="">
+
     </header>
 
     <!-- {# Content #}
@@ -43,4 +54,5 @@
     </div> -->
 
   {% endblock %}
+    </div>
 </article>

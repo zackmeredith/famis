@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g stroke="#333333">
+            <g>
+                <path d="M18,36 C27.9411255,36 36,27.9411255 36,18 C36,8.0588745 27.9411255,0 18,0 C8.0588745,0 0,8.0588745 0,18 C0,27.9411255 8.0588745,36 18,36 Z" stroke-width="4"></path>
+                <path d="M36,27.9970047 C36,26.8940894 36.8877296,26 38,26 L38,26 C39.1045695,26 40,26.8897904 40,28.0089913 L40,41.5715485 L40,49.9997897 C40,51.1044753 39.1122704,52 38,52 L38,52 C36.8954305,52 36,51.1050211 36,50.0029953 L36,27.9970047 Z" stroke-width="2" transform="translate(38.000000, 39.000000) rotate(-45.000000) translate(-38.000000, -39.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

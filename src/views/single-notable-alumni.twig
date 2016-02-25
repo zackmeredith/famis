@@ -1,0 +1,51 @@
+{# View :: Single notable-alumni #}
+
+{% extends "base.twig" %}
+
+{% block header_title %}
+
+
+{% endblock %}
+
+{% block header_no_img %}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+  <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}" role="article" itemscope itemtype="http://schema.org/Article">
+  <div class="bg-alternate">
+    {# Header #}
+    <div class="container-small py2 sm-py3">
+
+
+      <h2 itemprop="headline" class="mt0">
+        {{post.title}}
+      </h2>
+
+
+      </div>
+  </div>
+
+    {# Content #}
+    <div itemprop="articleBody" class="container-small mx-auto py2 sm-py4">
+
+      {% if post.get_field('wpcf-video-embed-code') %}
+      <div class="flex-video widescreen py2 mb2 sm-mb4">
+        {{video}}
+      </div>
+      {% endif %}
+
+      {{post.content}}
+
+
+      {% include "partials/tags.twig" %}
+
+    </div>
+
+
+  </article>
+
+{% endblock %}

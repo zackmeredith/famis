@@ -12,15 +12,34 @@
 
 {% endblock %}
 
-{% block content %}
+{% block content2 %}
+
+<div class="clearfix" style="">
+  <div class="col md-col-8 relative overlay-hover-dark" style="background: url(http://unsplash.it/1100/600) center; background-size: cover; height: 500px;">
+    <div class="overlay"></div>
+    <div class="p3 white absolute bottom-0">
+      <h3 class="regular">Academics</h3>
+      <h2 class="mt0">Digital Filmmaking at Loyola</h2>
+      <!-- <a href="#" class="btn btn-outline white">Read More</a> -->
+    </div>
+
+  </div>
+
+  <!-- <div class="col sm-col-4 relative overlay-hover-dark" style="background: url(http://unsplash.it/900/600) center; background-size: cover; height: 100%">
+    <div class="overlay"></div>
+
+  </div> -->
+  <div class="col md-col-4 relative" style="height: 500px;">
+    <div class="p3">
+      <h3 class="mt0">This is a test heading.</h3>
+      <hr class="hr-sm-accent ml0 mb2">
+      <p>
+        Welcome to the creative university. We do a lot of things here that you can learn about. Be a thing. Do a thing. Live a thing.
+      </p>
+      <a href="#" class="btn btn-outline btn-outline-round black"><span class="px2">Read More</span></a>
+    </div>
+  </div>
+</div>
 
 
-
-{% endblock %}
-
-{% block footer %}
-  <footer class="footer px3 py2 clearfix" id="footer">
-    {% include 'footer.twig' %}
-  </footer>
-  {{ function('wp_footer') }}
 {% endblock %}

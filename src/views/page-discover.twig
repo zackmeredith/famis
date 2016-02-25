@@ -1,0 +1,59 @@
+{# View :: Index #}
+
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="clearfix">
+  <div class="bg-alternate flex flex-center-center" style="height: 10vh;">
+    <form action="/" class="searchform flex px2" id="searchform" method="get" role="search" style="justify-content: space-around; flex-basis: 800px;">
+      <label class="srt" for="s">Search</label>
+      <div class="wp_search__field">
+        <input class="wp_search__input field" name="s" placeholder="Search" style="background: url('{{(bloginfo('stylesheet_directory')~'/img/search-icon-2.svg')}}') no-repeat 146px center;" type="search search-field-input">
+      </div>
+
+
+      <select class="field" name="category_name">
+        <option value="">Categories</option>
+        {% for cat in categories %}
+        <option value="{{cat.name}}">{{cat.name}}</option>
+        {% endfor %}
+      </select>
+
+
+
+      <select name="cat" id="cat" class="postform">
+      {% for cat in categories %}
+      <option value="{{cat.name}}">{{cat.name}}</option>
+      {% endfor %}
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+var dropdown = document.getElementById( "cat" );
+function onCatChange() {
+if ( dropdown.options.length > 0 ) {
+location.href = "http://localhost:9000/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+}
+}
+dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+    <button type="submit" class="search-submit btn btn-outline">Search</button>
+
+</form>
+  </div>
+  <div class="clearfix container flex flex-wrap">
+    {% for post in posts %}
+    <div class="news-post sm-col sm-col-6 md-col-4 lg-col-3 p2 mx-auto">
+      {% include ['partials/snippets/snippet-post.twig'] %}
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+  {% include ['partials/pagination.twig'] %}
+
+{% endblock %}

@@ -1,115 +1,109 @@
 {# View :: Partial :: Navigation #}
 
 {% block header %}
-<div class="relative clearfix">
 
 
-<div class="top-bar py2 border-right">
-  <div class="logo ml2 sm-ml3 inline-block" role="banner">
-    <a class="logo-link link-reset hover-bar relative" href="/" rel="home">
-      <h2 class="logo-text-main m0 srt">LOYOLA University New Orleans</h2>
-      <span class="logo-text-sub block srt">Film & Music Industry Studies</span>
-      <img alt="Loyola Univerisity New Orleans Film & Music Industry Studies Logo" src="{{(bloginfo('stylesheet_directory')~'/img/famis-logo.svg')}}"/>
+
+<header class="main-header clearfix">
+  <div class="logo left relative ml2 sm-ml3" role="banner" style="background: url({{(bloginfo('stylesheet_directory')~'/img/famis-logo.svg')}}) center no-repeat;">
+    <a class="block fill-container" href="/" rel="home">
     </a>
   </div>
 
-  <span class="nav-main__button-wrap right" style="font-size: 0.8rem; ">
-     <a href="/how-to-apply">
-       <button class="btn btn-accent-fill uppercase" name="button" type="button">Apply</button>
-     </a>
-     <a href="/how-to-apply">
-       <button class="btn btn-accent-fill uppercase" name="button" type="button">Request Info</button>
-     </a>
-     </span>
+  <nav class="nav-main" id="nav-main" role="navigation">
 
-
-</div>
-
-    <nav class="nav-main" id="nav-main" role="navigation">
-
-      <!-- <div class="feat-menus md-hide">
-
-
-            <div class="feat-menu">
-
-
-              <h6 class="m0 p1">Degree Link</h6>
-            </div>
-
-            <div class="feat-menu">
-              <h6 class="m0 p1">Popular</h6>
-            </div>
-      </div> -->
-      <div class="nav-main-wrapper flex flex-center">
-        <ul class="nav-list list-reset mb0 sm-mr2 py2">
+      <ul class="nav-list list-reset">
 
         {% for item in primary_menu.get_items %}
-        <li class="nav-list-item list-reset inline-block py2 {{item.classes | join(' ')}}">
+        <li class="nav-list-item list-reset {{item.classes | join(' ')}}">
 
-          <a class="nav-list-item-link black accent-hover py3 px1 sm-px2 align-middle" href="{{item.get_link}}">{{item.title}}</a>
-
+          <a class="nav-list-item-link align-middle accent-hover py2 px1 sm-px2" href="{{item.get_link}}">{{item.title}}</a>
 
           {% if item.get_children %}
-          <span class="nav-drop-button">
-            <svg class="nav-drop-button-icon" fill="currentcolor" height="8" id="triangleDown" viewBox="0 0 32 32" width="8" xmlns="http://www.w3.org/2000/svg">
+
+          <span class="nav-drop-button align-middle">
+            <!-- <svg class="nav-drop-button-icon align-middle" fill="currentcolor" height="8" id="triangleDown" viewBox="0 0 32 32" width="8" xmlns="http://www.w3.org/2000/svg">
               <path d="M4 8 H28 L16 26 z"></path>
+            </svg> -->
+            <svg class="nav-drop-button-icon" id="triangleDown">
+                <use xlink:href="{{(bloginfo('stylesheet_directory')~'/sprite/sprite.svg#chevron-down')}}"></use>
             </svg>
           </span>
-          <!-- <i class="arrow arrow-up bottom-0 mx-auto sm-show"></i> -->
-          <div class="nav-drop">
+          <div class="nav-drop flex flex-center-center">
 
+              <ul class="list-reset mb0 mt1 sm-mt0 clearfix flex flex-wrap" style="width: 100%;">
 
-          <ul class="list-reset mb0 mt1 sm-mt0" style="width: 100%; display: block;">
+                {% for child in item.get_children %}
 
-            <!-- <div class="clearfix sm-col-8 mx-auto sm-mt3 py1"> -->
-              {% for child in item.get_children %}
+                <li class="list-reset block sm-ml0 md-col md-col-4 py2 sm-px3 {{item.classes | join(' ')}}">
 
-              <li class="list-reset block sm-ml0 md-col md-col-4 py2 sm-px3 md-px4">
+                  <a class="nav-drop-link px2 sm-p0 link-reset" href="{{child.get_link}}">
+                    {{child.title}}
+                  </a>
+                  <hr class="lg-show" style="background: rgba(255,255,255, 0.25);">
+                </li>
 
-                <a class="nav-drop-link black px2 sm-p0 hover relative logo-link link-reset" href="{{child.get_link}}">
-                  <span class="accent-hover">{{child.title}}</span>
-                </a>
-                <hr class="lg-show">
-              </li>
+                {% endfor %}
+              </ul>
 
-              {% endfor %}
-            <!-- </div> -->
-          </ul>
           </div>
           {% endif %}
 
         </li>
-        <!-- <hr class="lg-hide"> -->
         {% endfor %}
 
       </ul>
 
 
+  </nav>
 
- <div class="align-middle">
+  <span class="absolute right-0 top-0 table flex flex-center mr2 sm-mr3" style="height: 100%;">
+    <span class="sm-show" style="font-size: 0.75rem; ">
+      <a href="/how-to-apply" class="btn btn-accent-fill uppercase"><span class="px1">Apply</span></a>
+    </span>
+    <span class="mr4 sm-ml2 sm-mr0 search-toggle"></span>
 
-      <div class="wp_search nav-main-search inline-block align-middle">
-        <form action="/" class="searchform" id="searchform" method="get" role="search">
-          <label class="srt" for="s">Search</label>
-          <div class="wp_search__field search-field mx-auto">
-            <input class="wp_search__input nav-main-search-input" name="s" placeholder="Search" style="background: url('{{(bloginfo('stylesheet_directory')~'/img/search-icon-2.svg')}}') no-repeat 146px center;" type="search search-field-input">
-            <input type="submit" class="search-submit srt" value="Search">
-          </div>
-        </form>
-      </div>
+    <div class="menu btn-back" style="top: 8px;">
+      <div class="btn-back-icon"></div>
+    </div>
+
+  </span>
 
 
+</header>
+
+<div class="cover-layer flex-center-center">
+  <div class="col-10 md-col-8 lg-col-6">
+  <form action="/" class="main-header__searchform mb2" id="searchform" method="get" role="search">
+    <input type="search" placeholder="Search..." class="wp_search__input" name="s" autocomplete="off">
+
+    <a href="" class="srt">Search<input type="submit" class="search-submit" value="Search"></a>
+  </form>
+
+  <div class="card clearfix p2">
+    <div class="col sm-col-6">
+      <!-- <h4>Categories</h4> -->
+      <select class="field select-redirect" style="height: 2.75rem;" name="category_name">
+       <!-- <option value="">Categories</option> -->
+       <!-- <ul class="list-reset"> -->
+       <option value="">Categories</option>
+       {% for cat in categories %}
+       <option value="{{cat.link}}">{{cat.name}}</option>
+       <!-- <li>
+          <a class="secondary-text-link" href="{{cat.link}}">{{cat.name}}</a>
+       </li> -->
+       {% endfor %}
+       <!-- </ul> -->
+     </select>
+    </div>
+    <div class="col sm-col-6">
+      <ul>
+        <li>Hey</li>
+        <li>Hey</li>
+      </ul>
+    </div>
   </div>
-
-     </div>
-
-    </nav>
-
+  </div>
 </div>
-
-
-  <div class="menu btn-back mr2 sm-mr3" style="top: 12px;">
-    <div class="btn-back-icon"></div>
-  </div>
 
 {% endblock %}

@@ -1,0 +1,55 @@
+{# View :: Partial :: Snippet - Post #}
+
+<article class="card snippet snippet-{{post.post_type}}" id="snippet-{{post.ID}}" style="height: 240px;" role="article" itemscope itemtype="http://schema.org/Article">
+  {% block content %}
+
+    {# Thumbnail #}
+    {% if post.get_thumbnail %}
+    <a href="{{post.link}}" itemprop="url">
+      <div class="relative" style="background: url('{{post.thumbnail.src|resize(420, 300)}}') center; background-size: cover; height: 160px; width: 100%;">
+        <!-- <div class="absolute bottom-0 right-0 table accent-fill white">
+          <div class="align-middle table-cell px2">
+            <h5>-->
+            {% else %}
+
+            <div class="relative" style="background: url('http://unsplash.it/620/300') center; background-size: cover; height: 200px; width: 100%;">
+
+            {% endif %}
+
+            <!-- <h5>
+          {{post.category}}
+        </h5> -->
+      </div>
+    </a>
+      <meta itemprop="thumbnailUrl" content="{{post.thumbnail.src}}">
+
+
+
+    {# Header #}
+    <header class="m0">
+      <h5>
+        <a class="accent-color" href="{{post.category.link}}" itemprop="url">
+        {{post.category}}
+        </a>
+      </h5>
+      <h4 class="m0" itemprop="headline">
+        <a class="black" href="{{post.link}}" itemprop="url" title="{{post.title}}">
+          {{post.title}}
+        </a>
+      </h4>
+    </header>
+
+      {# Author / Date #}
+      <!-- {% include "partials/post/post-meta.twig" %} -->
+
+    <!-- {# Content #}
+    <div itemprop="articleBody">
+      <p>
+        {{post.get_preview(50, false, "")}}
+      </p>
+    </div> -->
+
+    <!-- <a class="mt2 block black" href="{{post.link}}"><button class="btn btn-outline" type="button" name="button">Read More</button></a> -->
+
+  {% endblock %}
+</article>

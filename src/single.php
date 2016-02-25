@@ -9,6 +9,7 @@ $data['page'] = $page;
 $post = Timber::get_post();
 $data['post'] = $post;
 $data['comment_form'] = TimberHelper::get_comment_form();
+$data['categories'] = Timber::get_terms('category');
 
 if ( has_post_format( 'video' )) {
 
