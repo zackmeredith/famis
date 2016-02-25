@@ -1,0 +1,18 @@
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <title>close</title>
+    <defs>
+        <rect id="path-1" x="-2.60660172" y="7.5" width="21.2132034" height="1" rx="0.5"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-1">
+            <g id="close">
+                <rect id="Rectangle-1" fill="#333333" transform="translate(8.000000, 8.000000) rotate(-315.000000) translate(-8.000000, -8.000000) " x="-2.60660172" y="7.5" width="21.2132034" height="1" rx="0.5"></rect>
+                <g id="Rectangle-1-Copy">
+                    <use fill="#333333" fill-rule="evenodd" transform="translate(8.000000, 8.000000) rotate(-225.000000) translate(-8.000000, -8.000000) " xlink:href="#path-1"></use>
+                    <use fill="none" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

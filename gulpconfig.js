@@ -41,6 +41,23 @@ module.exports = {
     }
   },
 
+  icons: {
+    mode: {
+      symbol: { // symbol mode to build the SVG
+        sprite: 'sprite.svg', //sprite name
+        dest: 'sprite', // destination folder
+        example: true // Build sample page
+      }
+    , src: 'sprite/sprite.svg'
+    , dest: build
+
+    },
+    svg: {
+      src: src+'svg/**/*.svg',
+      xmlDeclaration: false, // strip out the XML attribute
+      doctypeDeclaration: false // don't include the !DOCTYPE declaration
+    }
+  },
 
   images: {
     build: { // Copies images from `src` to `build`; does not optimize

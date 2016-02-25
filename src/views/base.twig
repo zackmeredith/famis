@@ -44,15 +44,15 @@
 
     {% else %}
     {% block header_no_img %}
-      <!-- <header class="page-header page-header-no-img border-bottom center table">
-        <div class="px2 table-cell align-middle">
+      <header class="page-header page-header-no-img border-bottom px2 sm-px3 table">
+        <div class="py3">
           {% block header_no_img_title %}
           <h1 class="page-header-title m0" itemprop="headline">
             {{page.title}}
           </h1>
           {% endblock %}
         </div>
-      </header> -->
+      </header>
     {% endblock %}
 
     {% endif %}
@@ -78,9 +78,12 @@
     </section>
 
     {% block footer %}
-      <footer class="footer px3 py2 clearfix relative" id="footer">
+      <footer class="footer border-top relative" id="footer">
         {% include 'footer.twig' %}
       </footer>
+      <div class="bg-alternate center txt-dark-grey flex-center-center" style="height: 48px;">
+        <small class="align-middle">&copy; {{ time|date('Y') }} Loyola FAMIS. All Rights Reserved.</small>
+      </div>
       {{ function('wp_footer') }}
     {% endblock %}
 

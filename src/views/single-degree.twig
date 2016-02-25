@@ -23,9 +23,8 @@
 <article class="post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
 
   {# Content #}
-
-  <div class="relative border-bottom  sm-hide" style="font-size: 0.875rem; letter-spacing: 0.025em;">
-    <ul class="right-align list-reset md-show py1 mb0 container center uppercase">
+  <div class="relative border-bottom border-top" style="font-size: 0.875rem; letter-spacing: 0.025em;">
+    <ul class="center list-reset md-show py2 mb0 container">
       <!-- <li class="py1 px2 inline-block">
         <a href="/degree-programs" class="accent-hover">
           <i class="fa fa-chevron-left mr1"></i>All Degrees</a>
@@ -47,9 +46,9 @@
 
   <div class="relative container clearfix p2 py3 sm-py4">
 
-    <div class="md-col md-col-6 px2 sm-px3">
+    <div class="md-col md-col-6 px2">
       <!-- <blockquote class="ml0" cite="http://"> -->
-        <h2 class="mt0 capitalize">{{page.get_field('wpcf-highlighted-text')}}</h2>
+        <h3 class="mt0 capitalize">{{page.get_field('wpcf-highlighted-text')}}</h3>
         <hr class="hr-sm-accent ml0 mb3">
       <!-- </blockquote> -->
 
@@ -57,7 +56,7 @@
 
       <!-- <div class="mt2">
         <h4 class="mb2">Get Started</h4>
-        <a class="inline-block" href="https://admissions.loyno.edu/register/inquiryform" target="_blank">
+        <a class="inline-block" href="https://admissions.loyno.edu/register/inquiryfor m" target="_blank">
           <button class="mb2 block btn btn-accent-fill btn-outline" type="button" name="button">Request Information</button>
         </a>
         <a class="inline-block sm-px1" href="/how-to-apply">
@@ -68,12 +67,14 @@
 
     </div>
 
-    <div class="md-col md-col-6 px2 sm-px3 mx-auto mt4">
+    <!-- <div class="md-col md-col-6 px2 sm-px3 mx-auto mt4">
 
             <div class="mx-auto" style="height: 400px; background: url({{page.thumbnail}}) center; background-size: cover;"></div>
 
+  </div> -->
   </div>
-  </div>
+
+
 
 
   <div class="bg-alternate p2 py3 sm-py4">
@@ -110,7 +111,7 @@
       <h2 class="h2 mb2 mt1 center">Find your career path.</h2>
       <hr class="hr-sm-accent">
 
-      <div class="clearfix container-small py2 mx-auto flex-wrap flex">
+      <div class="clearfix container-md py2 mx-auto flex-wrap flex">
 
         {% for post in degree.posts(6, 'career') %}
         <div class="sm-col sm-col-6 md-col-4 p2 mx-auto">

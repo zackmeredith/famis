@@ -193,13 +193,16 @@
 .card {
   box-shadow: 0 1px 1px rgba(50,59,67,0.1);
   background-color: #fefefe;
-   border-radius: 3px;
+  border-radius: 3px;
 }
 
 .container-small {
+  max-width: 760px;
+
+}
+
+.container-md {
   max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 
@@ -240,7 +243,7 @@
 .overlay-hover-dark {
     &:hover {
       .overlay {
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.5);
     }
   }
 }

@@ -1,15 +1,15 @@
 {# View :: Partial :: Snippet - Post #}
 
-<article class="sm-py2 snippet snippet-{{post.post_type}}" id="snippet-{{post.ID}}" style="min-height: 480px;" role="article" itemscope itemtype="http://schema.org/Article">
+<article class="border p2 snippet snippet-{{post.post_type}}" id="snippet-{{post.ID}}" role="article" itemscope itemtype="http://schema.org/Article">
   {% block content %}
 
     {# Header #}
     <header class="m0">
-      <h3 class="m0 block" itemprop="headline">
+      <h4 class="m0 block" itemprop="headline">
         <a class="black" href="{{post.link}}" itemprop="url" title="{{post.title}}">
           {{post.title}}
         </a>
-      </h3>
+      </h4>
 
 
           <h5 class="txt-md-grey inline-block">
@@ -25,8 +25,9 @@
 
     </header>
     <p>
-      {{post.content}}
+      {{post.get_preview(30, false, "")}}
     </p>
+    <a href="{{post.link}}" class="btn btn-outline">Read More</a>
     <!-- {# Content #}
     <div itemprop="articleBody">
       <p>

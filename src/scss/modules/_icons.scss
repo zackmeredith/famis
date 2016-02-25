@@ -1,0 +1,24 @@
+.icon {
+  &--social {
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: $md-grey;
+    transition: 0.15s ease-in-out;
+
+    &:hover {
+      fill: $dark-grey;
+    }
+  }
+
+}
+
+.icon-list {
+
+  &__item {
+
+    padding-right: 0.5rem;
+  }
+
+
+}

@@ -50,23 +50,23 @@
 .page-header {
   height: auto;
   width: 100%;
-  height: 30vh;
+  height: 25vh;
 
   &-hero {
-  height: 55vh;
+  height: 65vh;
   }
 
   @media (min-width: 64em) {
     // height: 35vh;
     &-hero {
-    height: 55vh;
+    height: 60vh;
     }
   }
 
   @media (min-width: 100em) {
 
     &-hero {
-    height: 65vh;
+    height: 70vh;
     }
   }
 

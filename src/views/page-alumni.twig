@@ -4,91 +4,76 @@
 
 {% block header %}
 
-<div class="clearfix">
-  <div class="md-col md-col-8">
-    {% for post in main_feat_alumni.posts(1, 'notable-alumni') %}
+{% for post in main_feat_alumni.posts(1, 'notable-alumni') %}
 
-    <div class="relative overlay-hover-dark" style="background: url('{{post.thumbnail}}') center; background-size: cover; height: 80vh;">
-      <!-- <div class="relative" style="background: url('http://unsplash.it/1400/900') center; background-size: cover; height: 80vh;"> -->
-      <div class="overlay"></div>
+<div class="relative overlay-hover-dark flex flex-center" style="background: url('{{post.thumbnail}}') center; background-size: cover; height: 60vh;">
 
-      <div class="hero-content white absolute bottom-0 p3">
-        <a class="white" href="{{post.link}}">
-          <h1 class="m0">{{post.title}}</h1>
-        </a>
-          <a class="accent-color relative hover-bar inline-block link-reset" href="{{post.category.link}}">
-            <h4 class="accent-color m0">
-              {{post.category}}
-            </h4>
-          </a>
+  <div class="overlay"></div>
 
+  <div class="hero-content white relative container-md mx-auto p2">
+    <a href="{{post.category.link}}">
+      <button class="btn btn-accent-fill" style="font-weight: 700; font-family: Avenir; font-size: 0.8rem;" name="button" type="button">
+        {{post.category}}
+        Featured Alumni
+      </button>
+    </a>
+    <a class="white" href="{{post.link}}">
+      <h1 class="mt1">{{post.title}}</h1>
+    </a>
 
+      <span class=""></span>
 
-      </div>
-      <div class="absolute top-0 left-0 accent-fill white" style="width: 320px;">
-        <div class="px3 py2">
-          <h3 class="m0" style="letter-spacing: 0.05em">
-            Featured Alumni
-          </h3>
-        </div>
-      </div>
-
-      <!-- <div class="absolute bottom-0 right-0 accent-fill" style="width: 150px; color: white">
-        <div class="px2">
-          <h5>
-            {{post.category}}
-          </h5>
-        </div>
-      </div> -->
-
-    </div>
-
-    {% endfor %}
   </div>
-  <div class="md-col md-col-4" style="height: 80vh;">
-    {% for post in secondary_feat_alumni.posts(2, 'notable-alumni') %}
-    <div class="secondary-feat-post relative overlay-hover-dark" style="background: url('{{post.thumbnail}}') center; background-size: cover;">
-      <!-- <div class="col-12 table secondary-feat-post relative" style="background: #222"> -->
-      <div class="overlay"></div>
-      <div class="absolute bottom-0 left-0 p3">
-        <a class="white" href="{{post.link}}">
-          <h3 class="m0">{{post.title}}</h3>
-        </a>
-        <a class="accent-color relative hover-bar inline-block link-reset" href="{{post.category.link}}">
-          <h4 class="accent-color m0 relative">
-            {{post.category}}
-          </h4>
-        </a>
-      </div>
-      <!-- <div class="absolute bottom-0 right-0 accent-fill" style="width: 150px; color: white">
-        <div class="px2">
-          <h5>
-            {{post.category}}
-          </h5>
-        </div>
-      </div> -->
-    </div>
-
-    {% endfor %}
-  </div>
-
 </div>
 
+{% endfor %}
+<div class="clearfix container border-left border-right ">
+{# {% for post in secondary_feat_alumni.posts(3, 'notable-alumni') %}
+<div class="sm-col sm-col-4 secondary-feat-post relative flex flex-center sm-px1 border-right sm-py2" style="max-height: 160px">
+  <div class="relative mr2 circle" style="height: 104px; width: 104px; background: url('{{post.thumbnail}}') center; background-size: cover;">
+  </div>
+  <!-- <div class="col-12 table secondary-feat-post relative" style="background: #222"> -->
+  <div class="">
+    <a class="black" href="{{post.link}}">
+      <h4 class="m0">{{post.title}}</h4>
+    </a>
+    <a class="accent-color relative hover-bar inline-block link-reset" href="{{post.category.link}}">
+      <h4 class="accent-color m0 relative">
+        {{post.category}}
+      </h4>
+    </a>
+  </div>
+</div>
+
+
+{% endfor %} #}
+</div>
 {% endblock %}
 
 {% block content %}
 
+<form class="filter-form" method="get">
+	<select name="orderby" class="orderby">
+					<option value="menu_order">Year</option>
+					<option value="" selected="selected">Sort by popularity</option>
+					<option value="">Sort by average rating</option>
+					<option value="">Sort by newness</option>
+					<option value="">Sort by price: low to high</option>
+					<option value="">Sort by price: high to low</option>
+			</select>
+	</form>
+
 <article class="post-type-{{page.post_type}}" id="post-{{page.ID}}" itemscope itemtype="http://schema.org/WebPage">
-  <div class="clearfix sm-flex flex-wrap mb2 sm-mb4 p2 sm-px3 ">
+  <div class="clearfix sm-flex flex-wrap mb2 sm-mb4 p2 sm-px3" >
     <div class="">
       <div class="py3">
         <h4 class="center py2">Notable Alumni</h4>
         <hr>
       </div>
       {# Content #}
-      <div class="clearfix ">
+      <div class="clearfix flex flex-wrap">
         {% for post in posts %}
-        <div class="sm-col sm-col-6 px2 sm-p2 mx-auto">
+        <div class="sm-col sm-col-6 md-col-4 px2 sm-p2">
           {% include ['partials/snippets/snippet-alumni.twig'] %}
         </div>
         {% endfor %}

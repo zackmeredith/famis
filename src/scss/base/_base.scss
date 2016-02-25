@@ -21,28 +21,28 @@ body {
 	color: #222;
 	line-height: 1.8;
 }
-h1    { font-size: 2.75rem; }
+h1    { font-size: 2.5rem; }
 h2    { font-size: 2.25rem; }
 h3    { font-size: 1.75rem; }
 h4    { font-size: 1.25rem; }
 h5    { font-size: 1rem; }
 h6,
-.small { font-size: .85rem; }
+.small { font-size: .75rem; }
 
 @media screen and (min-width: 40em) {
 	h1    { font-size: 3rem; }
-	h2    { font-size: 2.25rem; }
-	h3    { font-size: 1.75rem; }
+	h2    { font-size: 2.5rem; }
+	h3    { font-size: 2rem; }
 	h4    { font-size: 1.25rem; }
 	h5    { font-size: 1rem; }
 	h6,
-	.small { font-size: .85rem; }
+	.small { font-size: .75rem; }
 }
 .container {
-	max-width: 80em;
+	max-width: 90em;
 
 	@media screen and (min-width: 120em) {
-		max-width: 90em;
+		max-width: 100em;
 	}
 }
 

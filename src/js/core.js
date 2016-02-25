@@ -92,7 +92,7 @@ switchAccordion = function(e) {
 
 $('.menu').click(function(){
   $(this).toggleClass('open');
-  $('.nav-main-wrapper').toggleClass('slide-in-right');
+  $('.nav-main').toggleClass('slide-in-right');
   $('.header').toggleClass('under');
 });
 
@@ -286,7 +286,17 @@ jQuery(document).ready(function($){
 });
 
 
+$('.search-toggle').on('click', function() {
+  $(this).toggleClass('search-toggle-active');
+  $('.cover-layer').toggleClass('search-form--visible');
+});
 
+$('.select-redirect').on('change', function(e){
+    var locAppend = $(this).find('option:selected').val();
+        // locSnip   = window.location.href.split('?')[0];
+
+    window.location.href = locAppend;
+});
 
 
 
